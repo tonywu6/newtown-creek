@@ -18,22 +18,30 @@
     <main>
         <div id="map-container" class="layer">
             <img id="map" src="static/graphics/newtown-creek-map.svg" alt="map of newtown creek" class="layer-content">
+            <div id="map-lables" class="layer">
+                <img src="static/graphics/newtown-creek-map-labels.svg" alt="map labels" class="layer-content">
+            </div>
             <div id="annotation" class="layer">
-                <ul class="highlighter-filter">
-                    <li>
-                        <p class="label shape highlighter"><a href="/photos.html">Survey #2</a></p>
-                        <div class="layer w4 highlighter-switch">
-                            <img id="annotation-w4" class="layer-content" src="static/graphics/annotations/w4.svg">
-                        </div>        
-                    </li>
-                    <li>
-                        <p class="label shape highlighter"><a href="/photos.html">Survey #1</a></p>
-                        <div class="layer w3 highlighter-switch">
-                            <img id="annotation-w3" class="layer-content" src="static/graphics/annotations/w3.svg">
-                        </div>        
-                    </li>
-                </ul>
-            </div>    
+                <div class="layer annotation-highlight">
+                    <ul class="hl-filter">
+                        <li class="hl">
+                            <p class="label hl hl-colored"><a href="/photos.html">Survey #2</a></p>
+                            <div class="layer w4 hl-switch animate-flash">
+                                <img class="layer-content" src="static/graphics/annotations/w4.svg">
+                            </div>
+                        </li>
+                        <li class="hl">
+                            <p class="label hl hl-colored"><a href="/photos.html">Survey #1</a></p>
+                            <div class="layer w3 hl-switch animate-flash">
+                                <img class="layer-content" src="static/graphics/annotations/w3.svg">
+                            </div>
+                        </li>
+                        <div class="layer legend hl-switch">
+                            <img class="layer-content" src="static/graphics/annotations/legend.svg">
+                        </div>    
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
 </body>
