@@ -57,6 +57,13 @@ h1 {
             background-color: colors.$std-yellow;
             ~ .highlighter-switch {
                 visibility: visible;
+                animation: flash 2s infinite 0s;
+            }
+            @keyframes flash {
+                0% { opacity: 100; }
+                60% { opacity: 100; }
+                61% { opacity: 0%; }
+                100% { opacity: 0%; }
             }
         }
 
