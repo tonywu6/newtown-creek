@@ -32,8 +32,12 @@ article {
 	}
 }
 
-p {
+p, li {
     line-height: 1.5rem;
+}
+
+li {
+	padding: 0 0 0.5em;
 }
 
 blockquote p {
@@ -49,6 +53,9 @@ blockquote {
 ul {
 	// list-style: square outside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
 	list-style: square outside url('data:image/gif;base64,R0lGODdhBQAKAJEAAAAAAP///wAAAAAAACH5BAkAAAIALAAAAAAFAAoAAAIIlI+ZwawPUQEAOw==');
+	ol {
+		list-style: decimal;
+	}
 }
 em, i {
 	color: colors.$ulysses-blue;
