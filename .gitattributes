@@ -9,6 +9,7 @@
 *.svg filter=lfs diff=lfs merge=lfs -text
 *.ai filter=lfs diff=lfs merge=lfs -text
 *.scss filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
 * !text !filter !merge !diff
 *.m4a filter=lfs diff=lfs merge=lfs -text
 *.m4v filter=lfs diff=lfs merge=lfs -text
