@@ -1,7 +1,45 @@
+@use "colors";
+
 article {
     margin: 0 20% 0;
 }
 
 p {
     line-height: 1.5rem;
+}
+
+blockquote p {
+	margin: 0;
+	padding: 0.3em 0.1em 0.3em
+}
+blockquote {
+	font-size: 18px;
+	margin: 0 0 1rem;
+	color: #4fb0e0;
+	background-color: #DEEAF2;
+}
+ul {
+	// list-style: square outside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
+	list-style: square outside url('data:image/gif;base64,R0lGODdhBQAKAJEAAAAAAP///wAAAAAAACH5BAkAAAIALAAAAAAFAAoAAAIIlI+ZwawPUQEAOw==');
+}
+em, i {
+	color: #4fb0e0;
+}
+h2, strong, b {
+	color: #c7388b;
+}
+li.cat-item {
+	margin: 0
+}
+
+figure {
+	width: 100%;
+	margin: 1em 0 1em;
+	img {
+		width: 100%;
+	}
+}
+
+mark {
+	background-color: colors.$std-yellow;
 }
