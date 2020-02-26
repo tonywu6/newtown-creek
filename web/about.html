@@ -11,41 +11,45 @@
 
     <meta itemscope itemprop="nav-name" content="About">
     <meta itemscope itemprop="nav-order" content="1">
-    <meta itemscope itemprop="nav-decoration" content="color-grey-bg">
+    <meta itemscope itemprop="nav-decoration" content="color-white-bg">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="script/app.js"></script>
 </head>
 
 <body>
-    <nav>
-        <ul id="subway-nav" class="subway-sign highlighter">
-        </ul>
-    </nav>
+    <div id="top-menu">
+        <a href="javascript:void(0)" class="highlighter">
+            <div id="nav-switch" class="hl">
+                <img src="static/graphics/cross.svg">
+            </div>
+            <p class="subway-label color-white-bg hl-switch">Menu</p>
+        </a>
+        <div id="top-menu-content" class="hidden">
+            <nav class="color-95-translucent">
+                <ul id="subway-nav" class="subway-sign highlighter">
+                </ul>
+            </nav>
+            <div id="license" class="subway-sign color-100-white-bg">
+                <h3>This website is for educational purposes at New York Unniversity only.</h3>
+                <section id="creative-commons">
+                    <p>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+                        </a>
+                        <br />
+                        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                    </p>
+                </section>
+            </div>
+            <div id="contact" class="subway-sign color-cyan-bg">
+                <p><strong>Tony</strong> | <a href="https://twitter.com/twu113">Twitter</a> | <a href="mailto:tony[dot]wu[at]nyu[dot]edu">Email</a> | <a href="https://digitalmediatheory.wordpress.com">Course blog</a></p>
+            </div>
+        </div>
+    </div>
     <header>
         <h1>DM:TP</h1>
     </header>
-    <footer>
-        <section id="copyright">
-            <section id="creative-commons">
-                <p>Tony</p>
-                <p><a href="mailto:tony[dot]wu[at]nyu[dot]edu">Email</a></p>
-                <p><a href="https://twitter.com/twu113">Twitter</a></p>
-                <p>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                        <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-                    </a>
-                    <br />
-                    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-                </p>
-            </section>
-            <section id="fair-use">
-                <p>This site may contain copyrighted material the use of which has not always been specifically authorized by the copyright owner. We are making such material available in an effort to advance understanding of environmental, political, human rights, economic, democracy, scientific, and social justice issues, etc. we believe this constitutes a ‘fair use’ of any such copyrighted material as provided for in section 107 of the US Copyright Law.</p>
-                <p>In accordance with Title 17 U.S.C. Section 107, the material on this site is distributed without profit to those who have expressed a prior interest in receiving the included information for research and educational purposes. For more information go to: <a href="https://www.law.cornell.edu/uscode/17/107.shtml">https://www.law.cornell.edu/uscode/17/107.shtml</a></p>
-                <p>If you wish to use copyrighted material from this site for purposes of your own that go beyond ‘fair use’, you must obtain permission from the copyright owner.</p>
-            </section>    
-        </section>
-    </footer>
 </body>
 
 </html>

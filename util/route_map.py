@@ -23,6 +23,7 @@ def parse(file):
         hidden = soup.find(itemprop="nav-hidden")
         info['name'] = name and name['content']
         info['hidden'] = hidden and hidden['content']
+        info['hidden'] = True if info['hidden'] == 'true' else info['hidden']
         if not name:
             return info
 
