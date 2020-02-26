@@ -12,12 +12,28 @@ main {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #top-menu {
+        background-color: unset;
+
+        #top-menu-content {
+            background-color: colors.$onedark-blue-darkest;
+
+            nav {
+                margin: 0;
+            }
+        }
+    }
+}
+
 h1 {
     top: 5%;
     right: 5%;
 
     font-size: 2.5rem;
     letter-spacing: -0.1rem;
+
+    color: colors.$onedark-gray;
 }
 
 #annotation {

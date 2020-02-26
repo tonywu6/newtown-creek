@@ -73,6 +73,7 @@ function toggleMenu() {
 function toggleFlex(e) {
     $(e).toggleClass('hidden')
     $(e).toggleClass('flex')
+    return !$(e).hasClass('hidden')
 }
 
 function initFloatingTitle() {
