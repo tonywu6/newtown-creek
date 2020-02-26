@@ -1,35 +1,30 @@
 @use "colors";
 
-article {
+header, article {
 	margin: 0 22% 0;
-	@media screen and (min-width: 768px) and (max-width: 1024px) {
-		margin: 0 10% 0;
-	}
-	@media screen and (max-width: 768px) {
-		margin: 0 3% 0;
-	}
-	h1, h2, h3, h4 {
-		color: colors.$ulysses-blue;
-	}
-	h1 {
-		font-size: 2em;
-	}
-	h2 {
-		font-size: 1.5em;
-	}
-	h3 {
-		font-size: 1.2em;
-	}
-	h4 {
-		font-size: 1.2em;
-		font-style: italic;
-	}
-	h5 {
-		font-size: 1em;
-	}
-	h6 {
-		font-size: 0.8em;
-	}
+}
+
+h1, h2, h3, h4 {
+	color: colors.$ulysses-blue;
+}
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.5em;
+}
+h3 {
+	font-size: 1.2em;
+}
+h4 {
+	font-size: 1.2em;
+	font-style: italic;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.8em;
 }
 
 p, li {
@@ -83,4 +78,15 @@ mark {
 	border: 3px;
 	border-color: colors.$ulysses-highlight-bg;
 	border-radius: 2px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	header, article {
+		margin: 0 10% 0;
+	}
+}
+@media screen and (max-width: 768px) {
+	header, article {
+		margin: 0 3% 0;
+	}
 }

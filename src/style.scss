@@ -1,0 +1,131 @@
+@use "colors";
+
+body {
+    background-color: colors.$darker;
+
+    color: colors.$onedark-white;
+    font-family: 'Helvetica Neue', 'Helvetica', -apple-system, BlinkMacSystemFont, 'Noto Sans', Ubuntu, 'Open Sans', sans-serif;
+
+    margin: 2%;
+}
+
+a {
+    color: colors.$onedark-blue;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    z-index: 15;
+
+    @media screen and (max-width: 768px) {
+        left: 15px;
+        top: 20px;
+    }
+
+    ul {
+        padding: 10px;
+        margin: 0;
+        background-color: colors.$onedark-blue-darkest-50;
+    }
+}
+
+li:last-of-type {
+    margin-bottom: 0;
+}
+
+.subway-sign {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.subway-label {
+    position: relative;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -0.04rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.2em;
+    }
+
+    display: inline-block;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: colors.$onedark-black;
+    }
+}
+
+.subway-li {
+    margin: 0 0 6pt;
+    display: inline-block;
+    width: max-content;
+}
+
+.shape {
+    position: absolute;
+    display: block;
+}
+
+.layer {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .layer-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.highlighter {
+
+    display: flex;
+    flex-direction: column;
+
+    .hl {
+        ~.hl-switch {
+            visibility: hidden;
+        }
+    }
+
+    .hl:hover {
+        &.hl-colored {
+            filter: brightness(120%);
+        }
+
+        ~.hl-switch {
+            visibility: visible;
+        }
+    }
+
+}
+
+.color-cyan-bg {
+    background-color: colors.$onedark-cyan;
+}
+
+.color-grey-bg {
+    background-color: colors.$onedark-white;
+}
+
+.color-blue-bg {
+    background-color: colors.$onedark-blue;
+}
+
+.color-green-bg {
+    background-color: colors.$onedark-green;
+}
