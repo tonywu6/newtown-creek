@@ -1,7 +1,15 @@
 @use 'colors';
 
-body {
-    margin: 0;
+main {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96vw;
+    height: 94vh;
+
+    @media screen and (max-height: 600px) {
+        height: 768px;
+    }
 }
 
 h1 {
@@ -12,71 +20,18 @@ h1 {
     letter-spacing: -0.1rem;
 }
 
-.shape {
-    position: absolute;
-    display: block;
-}
-
-.layer {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    .layer-content {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-}
-
 #annotation {
     width: 100%;
     height: 100%;
 
-    .label {
-        position: relative;
+    .highlighter {
 
-        font-size: 1.5rem;
-        font-weight: bold;
-        letter-spacing: -0.04rem;
-
-        z-index: 2;
-
-        display: inline-block;
-        margin: 0;
-
-        a {
-            text-decoration: none;
-            color: colors.$onedark-black;
-        }
-    }
-
-    .label-li {
-        margin: 0 0 6pt;
-        display: inline-block;
-        width: max-content;
-    }
-
-    .annotation-highlight {
-
-        display: flex;
         flex-direction: column-reverse;
-        
-        .hl-filter {
-            list-style-type: none;
 
-            display: flex;
-            flex-direction: column-reverse;
-        }
-
-        .hl {
-            ~ .hl-switch {
-                visibility: hidden;
-            }
+        ul.subway-sign {
+            // flex-direction: column-reverse;
+            vertical-align: bottom;
+            padding: 0 0 0 10%;
         }
 
         .hl:hover {
@@ -84,8 +39,7 @@ h1 {
                 background-color: colors.$std-yellow;
             }
 
-            ~ .hl-switch {
-                visibility: visible;
+            ~.hl-switch {
 
                 &.animate-flash {
                     animation: flash 2s infinite 0s;
@@ -97,17 +51,21 @@ h1 {
 
 }
 
-main {
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    width: 96vw;
-    height: 92vh;
-}
 
 @keyframes flash {
-    0% { opacity: 100; }
-    60% { opacity: 100; }
-    61% { opacity: 0%; }
-    100% { opacity: 0%; }
+    0% {
+        opacity: 100;
+    }
+
+    60% {
+        opacity: 100;
+    }
+
+    61% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
 }

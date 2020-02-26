@@ -4,5 +4,10 @@
         "paths": {
             "/build/*": ["/web/build"]
         }
+    },
+    "typeAcquisition": {
+        "include": [
+            "jquery"
+        ]
     }
 }
