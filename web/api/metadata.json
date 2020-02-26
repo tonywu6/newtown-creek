@@ -1,0 +1,53 @@
+{
+    "routes": [
+        {
+            "decoration": "color-grey-bg",
+            "hidden": null,
+            "name": "Home",
+            "order": 0,
+            "url": "index.html"
+        },
+        {
+            "decoration": "color-blue-bg",
+            "hidden": null,
+            "name": "Sound Project Proposal",
+            "order": 11,
+            "url": "post/sound-proposal.html"
+        },
+        {
+            "decoration": "color-green-bg",
+            "hidden": null,
+            "name": "Theory-making #1",
+            "order": 10,
+            "url": "post/theory-making-1.html"
+        },
+        {
+            "decoration": "color-grey-bg",
+            "hidden": null,
+            "name": "About",
+            "order": 1,
+            "url": "about.html"
+        },
+        {
+            "decoration": "color-grey-bg",
+            "hidden": "true",
+            "name": "Ecology Ideas",
+            "order": 5,
+            "url": "ideas.html"
+        },
+        {
+            "decoration": "color-cyan-bg",
+            "hidden": "frontpage",
+            "name": "Photos: Survey #2: Operatic",
+            "order": 7,
+            "url": "galleries/w4.html"
+        },
+        {
+            "decoration": "color-cyan-bg",
+            "hidden": "frontpage",
+            "name": "Photos: Survey #1",
+            "order": 7,
+            "url": "galleries/w3.html"
+        }
+    ]
+}

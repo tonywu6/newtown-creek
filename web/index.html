@@ -7,16 +7,25 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DMTP Spring 2020</title>
-    <link rel="stylesheet" type="text/css" href="build/styles/style-global.css">
+    <link rel="stylesheet" type="text/css" href="build/styles/style.css">
     <link rel="stylesheet" type="text/css" href="build/styles/style-index.css">
-    <link rel="stylesheet" type="text/css" href="build/styles/style-colorize.css">
+
+    <meta itemscope itemprop="nav-name" content="Home">
+    <meta itemscope itemprop="nav-order" content="0">
+    <meta itemscope itemprop="nav-decoration" content="color-grey-bg">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script/app.js"></script>
 </head>
 
 <body>
     <header>
         <h1 class="shape">Newtown Creek</h1>
     </header>
-    <nav></nav>
+    <nav>
+        <ul id="subway-nav" class="subway-sign highlighter">
+        </ul>
+    </nav>
     <main>
         <div id="map-container" class="layer">
             <img id="map" src="static/graphics/newtown-creek-map.svg" alt="map of newtown creek" class="layer-content">
@@ -24,32 +33,21 @@
                 <img src="static/graphics/newtown-creek-map-labels.svg" alt="map labels" class="layer-content">
             </div>
             <div id="annotation" class="layer">
-                <div class="layer annotation-highlight">
-                    <ul class="hl-filter">
-                        <li class="hl label-li">
-                            <p class="label hl hl-colored color-grey-bg"><a href="galleries/w4.html">Survey #2</a></p>
-                            <div class="layer w4 hl-switch animate-flash">
-                                <img class="layer-content" src="static/graphics/annotations/w4.svg">
-                            </div>
-                        </li>
-                        <li class="hl label-li">
-                            <p class="label hl hl-colored color-grey-bg"><a href="galleries/w3.html">Survey #1</a></p>
+                <div class="layer highlighter">
+                    <ul class="subway-sign">
+                        <li class="hl subway-li">
+                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="galleries/w3.html">Survey #1</a></p>
                             <div class="layer w3 hl-switch animate-flash">
                                 <img class="layer-content" src="static/graphics/annotations/w3.svg">
                             </div>
                         </li>
-                        <li class="label-li">
-                            <p class="label color-cyan-bg hl-colored"><a href="post/sound-proposal.html">Sound Project Proposal</a></p>
+                        <li class="hl subway-li">
+                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="galleries/w4.html">Survey #2</a></p>
+                            <div class="layer w4 hl-switch animate-flash">
+                                <img class="layer-content" src="static/graphics/annotations/w4.svg">
+                            </div>
                         </li>
-                        <li class="label-li">
-                            <p class="label color-cyan-bg hl-colored"><a href="post/theory-making-1.html">Theory-making #1</a></p>
-                        </li>
-                        <li class="label-li">
-                            <p class="label color-cyan-bg hl-colored"><a href="about.html">About</a></p>
-                        </li>
-                        <div class="layer legend hl-switch">
-                            <img class="layer-content" src="static/graphics/annotations/legend.svg">
-                        </div>    
+
                     </ul>
                 </div>
             </div>
