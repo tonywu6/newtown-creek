@@ -8,14 +8,14 @@
             "url": "post-sound-proposal.html"
         },
         {
-            "decoration": "color-grey-bg",
+            "decoration": "color-white-bg",
             "hidden": null,
             "name": "Home",
             "order": 0,
             "url": "index.html"
         },
         {
-            "decoration": "color-grey-bg",
+            "decoration": "color-white-bg",
             "hidden": null,
             "name": "About",
             "order": 1,
@@ -29,8 +29,8 @@
             "url": "gallery-w3.html"
         },
         {
-            "decoration": "color-grey-bg",
-            "hidden": "true",
+            "decoration": "color-white-bg",
+            "hidden": true,
             "name": "Ecology Ideas",
             "order": 5,
             "url": "post-ideas.html"

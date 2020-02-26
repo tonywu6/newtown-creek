@@ -12,7 +12,7 @@
 
     <meta itemscope itemprop="nav-name" content="Home">
     <meta itemscope itemprop="nav-order" content="0">
-    <meta itemscope itemprop="nav-decoration" content="color-grey-bg">
+    <meta itemscope itemprop="nav-decoration" content="color-white-bg">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="script/app.js"></script>
@@ -22,10 +22,35 @@
     <header>
         <h1 class="shape">Newtown Creek</h1>
     </header>
-    <nav>
-        <ul id="subway-nav" class="subway-sign highlighter">
-        </ul>
-    </nav>
+    <div id="top-menu">
+        <a href="javascript:void(0)" class="highlighter">
+            <div id="nav-switch" class="hl">
+                <img src="static/graphics/cross.svg">
+            </div>
+            <p class="subway-label color-white-bg hl-switch">Menu</p>
+        </a>
+        <div id="top-menu-content" class="hidden">
+            <nav class="color-95-translucent">
+                <ul id="subway-nav" class="subway-sign highlighter">
+                </ul>
+            </nav>
+            <div id="license" class="subway-sign color-100-white-bg">
+                <h3>This website is for educational purposes at New York Unniversity only.</h3>
+                <section id="creative-commons">
+                    <p>
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+                        </a>
+                        <br />
+                        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                    </p>
+                </section>
+            </div>
+            <div id="contact" class="subway-sign color-cyan-bg">
+                <p><strong>Tony</strong> | <a href="https://twitter.com/twu113">Twitter</a> | <a href="mailto:tony[dot]wu[at]nyu[dot]edu">Email</a> | <a href="https://digitalmediatheory.wordpress.com">Course blog</a></p>
+            </div>
+        </div>
+    </div>
     <main>
         <div id="map-container" class="layer">
             <img id="map" src="static/graphics/newtown-creek-map.svg" alt="map of newtown creek" class="layer-content">
@@ -36,13 +61,13 @@
                 <div class="layer highlighter">
                     <ul class="subway-sign">
                         <li class="hl subway-li">
-                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="galleries/w3.html">Survey #1</a></p>
+                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="gallery-w3.html">Survey #1</a></p>
                             <div class="layer w3 hl-switch animate-flash">
                                 <img class="layer-content" src="static/graphics/annotations/w3.svg">
                             </div>
                         </li>
                         <li class="hl subway-li">
-                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="galleries/w4.html">Survey #2</a></p>
+                            <p class="subway-label hl hl-colored color-cyan-bg"><a href="gallery-w4.html">Survey #2</a></p>
                             <div class="layer w4 hl-switch animate-flash">
                                 <img class="layer-content" src="static/graphics/annotations/w4.svg">
                             </div>

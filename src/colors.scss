@@ -11,7 +11,8 @@ $onedark-gray-darker: #787d86;
 $onedark-white: #d3d3d3;
 $onedark-blue: #5cadf1;
 $onedark-blue-darker: #3c8dc1;
-$onedark-blue-darkest-50: #334b5a85;
+$onedark-blue-darkest: #3e6881;
+$onedark-blue-darkest-95: #334b5ae8;
 $onedark-cyan: #51b5c3;
 $onedark-green: #96c475;
 $onedark-magenta: #c774df;
@@ -24,3 +25,35 @@ $ulysses-highlight-fg: rgb(235, 210, 72);
 $ulysses-highlight-bg: rgb(104, 93, 46);
 $ulysses-blue: rgb(70, 172, 219);
 $ulysses-pink: rgb(214, 76, 154);
+
+.color-cyan-bg {
+    background-color: $onedark-cyan;
+}
+
+.color-100-white-bg {
+    background-color: white;
+}
+
+.color-white-bg {
+    background-color: $onedark-white;
+}
+
+.color-blue-bg {
+    background-color: $onedark-blue;
+}
+
+.color-green-bg {
+    background-color: $onedark-green;
+}
+
+.color-95-translucent {
+    background-color: $onedark-blue-darkest-95;
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.color-darker-bg {
+    background-color: $darker;
+}
