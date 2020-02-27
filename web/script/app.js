@@ -16,6 +16,8 @@ function collectRoutes() {
                 if (!dict) console.error('ERROR: Cannot load nav bar contents')
 
                 let path = window.location.pathname || '/'
+                if (window.location.hostname != 'localhost')
+                    path = path.substring(17)
                 const names = {
                     '/index.html': 'frontpage',
                     '/': 'frontpage',
