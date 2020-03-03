@@ -23,7 +23,7 @@ a:hover {
     left: 50px;
     top: 50px;
 
-    width: 100%;
+    width: fit-content;
     z-index: 15;
 
     .subway-label {
@@ -166,6 +166,10 @@ article {
         margin: auto 3% auto;
     }
 
+    #top-menu {
+        width: 100%;
+    }
+
     #top-menu #top-menu-content {
         width: 100%;
         margin: 0;
@@ -205,6 +209,8 @@ header {
 
     display: inline-block;
     margin: 0;
+
+    width: max-content;
 
     a {
         text-decoration: none;
@@ -370,4 +376,8 @@ li:last-of-type {
 
 .hidden {
     display: none;
+}
+
+audio {
+    width: 100%;
 }
