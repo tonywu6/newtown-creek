@@ -8,6 +8,13 @@
             "url": "post-sound-proposal.html"
         },
         {
+            "decoration": "color-green-bg",
+            "hidden": null,
+            "name": "Theory-making #2",
+            "order": 15,
+            "url": "post-theory-making-2.html"
+        },
+        {
             "decoration": "color-white-bg",
             "hidden": null,
             "name": "Home",

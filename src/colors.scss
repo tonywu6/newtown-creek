@@ -9,6 +9,7 @@ $onedark-black: #272c33;
 $onedark-gray: #abb1bf;
 $onedark-gray-darker: #787d86;
 $onedark-white: #d3d3d3;
+$onedark-white-lighter: #ececec;
 $onedark-blue: #5cadf1;
 $onedark-blue-darker: #3c8dc1;
 $onedark-blue-darkest: #3e6881;
@@ -40,6 +41,10 @@ $ulysses-pink: rgb(214, 76, 154);
 
 .color-blue-bg {
     background-color: $onedark-blue;
+}
+
+.color-red-bg {
+    background-color: $onedark-red;
 }
 
 .color-green-bg {

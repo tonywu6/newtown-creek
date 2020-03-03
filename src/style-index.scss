@@ -71,18 +71,18 @@ h1 {
 
 @keyframes flash {
     0% {
-        opacity: 100;
+        filter: brightness(100%);
     }
 
-    60% {
-        opacity: 100;
+    50% {
+        filter: brightness(100%);
     }
 
-    61% {
-        opacity: 0%;
+    51% {
+        filter: brightness(60%);
     }
 
     100% {
-        opacity: 0%;
+        filter: brightness(60%);
     }
 }
