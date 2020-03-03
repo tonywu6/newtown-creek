@@ -1,0 +1,26 @@
+@use 'colors';
+
+h1 {
+    color: colors.$ulysses-pink;
+    font-weight: 300;
+    font-size: 4rem;
+    text-align: right;
+    margin: 40% 0 1rem;
+}
+
+.actor-container {
+
+    padding: 10%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        img {
+            transform: scale(200%);
+        }
+    }
+}
