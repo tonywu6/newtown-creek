@@ -2,7 +2,7 @@
     "routes": [
         {
             "decoration": "color-blue-bg",
-            "hidden": null,
+            "hidden": true,
             "name": "Sound Project Proposal",
             "order": 11,
             "url": "post-sound-proposal.html"
@@ -36,11 +36,32 @@
             "url": "gallery-w3.html"
         },
         {
+            "decoration": "color-blue-bg",
+            "hidden": null,
+            "name": "Sound Project Proposal",
+            "order": 12,
+            "url": "post-sound-proposal-revised.html"
+        },
+        {
             "decoration": "color-white-bg",
             "hidden": true,
             "name": "Ecology Ideas",
             "order": 5,
             "url": "post-ideas.html"
+        },
+        {
+            "decoration": "color-cyan-bg",
+            "hidden": true,
+            "name": "Photo Candidates",
+            "order": 100,
+            "url": "gallery-photo-candidates.html"
+        },
+        {
+            "decoration": "color-magenta-bg",
+            "hidden": null,
+            "name": "Audio: Scratch Tracks",
+            "order": 20,
+            "url": "audio-scratch.html"
         },
         {
             "decoration": "color-cyan-bg",
