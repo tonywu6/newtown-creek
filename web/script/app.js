@@ -6,39 +6,57 @@ const CLS_BASE_LABEL = 'subway-label hl hl-colored'
 
 const metadata = {}
 
-function collectRoutes() {
+class Route {
+    constructor(u) {
+        this.decoration = u.decoration
+        this.hidden = u.hidden
+        this.name = u.name
+        this.order = u.order
+        this.url = u.url
+    }
+}
+
+function collectRoutes(filters) {
     return new Promise((resolve, reject) => {
         $.ajax(API_ROOT + 'metadata.json')
             .fail((xhr, status, err) => {
                 reject(status, err)
             })
             .then(dict => {
-                if (!dict) console.error('ERROR: Cannot load nav bar contents')
+                if (!dict)
+                    reject(new Error('ERROR: Cannot load nav bar contents'))
 
                 let path = window.location.pathname || '/'
                 if (window.location.hostname != 'localhost')
                     path = path.substring(17)
-                const names = {
-                    '/index.html': 'frontpage',
-                    '/': 'frontpage',
-                }
+                path = path.replace(/.html$/, '')
+
+                /**
+                 * @type {Route[]}
+                 */
                 let urls = []
                 metadata.routes = dict.routes
+
                 for (let u of metadata.routes)
-                    if (names[path]) {
-                        if (
-                            !u.hidden ||
-                            (u.hidden != true && u.hidden != names[path])
-                        ) {
-                            urls.push(u)
+                    if (filters[path] != true)
+                        if (filters[path]) {
+                            if (
+                                !u.hidden ||
+                                (u.hidden != true &&
+                                    !filters[path].includes(u.hidden))
+                            ) {
+                                urls.push(new Route(u))
+                            }
+                        } else {
+                            if (u.hidden != true) urls.push(new Route(u))
                         }
-                    } else {
-                        if (u.hidden != true) urls.push(u)
-                    }
+                    else
+                        urls.push(new Route(u))
+
                 urls.sort((u1, u2) => {
                     let d = u1.order - u2.order
                     if (d) return d
-                    return u1.url.charCodeAt(0) - u2.url.charCodeAt(0)
+                    return u1.url < u2.url ? -1 : 1
                 })
                 resolve(urls)
             })
@@ -61,7 +79,6 @@ function initNavBar(urls) {
         p.append(a)
         navList.append(li)
     }
-
 
     $('#nav-switch').on('click', toggleMenu)
 
@@ -93,7 +110,11 @@ function initFloatingTitle() {
 }
 
 $(document).ready(() => {
-    collectRoutes()
+    collectRoutes({
+        '/index': ['frontpage'],
+        '/': ['frontpage'],
+        '/about': true
+    })
         .then(routes => initNavBar(routes))
         .catch((status, err) => {
             console.log(status)
