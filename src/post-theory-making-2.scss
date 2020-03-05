@@ -5,22 +5,438 @@ h1 {
     font-weight: 300;
     font-size: 4rem;
     text-align: right;
-    margin: 40% 0 1rem;
+    margin: 40vh 0 50vh;
 }
 
-.actor-container {
+.actor {
+    display: flex;
+    width: 100%;
+    margin: 0 0 5% 0;
 
-    padding: 10%;
-    overflow: hidden;
+    flex-flow: column wrap;
 
-    img {
+    align-content: space-around;
+    justify-content: space-around;
+
+    .subway-label {
+        margin: 0 0 0 auto;
+        font-size: 1em;
+        white-space: nowrap;
+    }
+
+    .actor-container {
+
+        overflow: hidden;
+
+        flex: 0 1 70%;
+
+        box-sizing: border-box;
+
+        margin: 0 auto;
         width: 100%;
-        object-fit: cover;
+        height: 56vh;
+
+        img {
+            position: relative;
+            object-fit: contain;
+            object-position: 50% 50%;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+
+            animation-duration: 0.3s;
+            animation-timing-function: cubic-bezier(0, 0, 0, 1);
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+        }
+
+        &.zoomed-in {
+            margin: 12vh auto;
+
+            width: 32vh;
+            height: 32vh;
+            border-radius: 16px;
+
+            animation: 0.3s cubic-bezier(0, 0, 0, 1) 0s 1 normal forwards container-in;
+
+            @keyframes container-in {
+                from {
+                    margin: 0 auto;
+                    width: 100%;
+                    height: 56vh;
+                    border-radius: 0px;
+                }
+
+                to {
+                    margin: 12vh auto;
+                    width: 32vh;
+                    height: 32vh;
+                    border-radius: 16px;
+                }
+            }
+        }
+
+        &#actor-1 {
+            &.zoomed-in img {
+                transform: scale(4) translate(-0.5%, 8%);
+                animation-name: a1-in;
+
+                @keyframes a1-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(4) translate(-0.5%, 8%);
+                    }
+                }
+            }
+            &.zoomed-out img {
+                transform: none;
+                animation-direction: reverse;
+            }
+        }
+
+        &#actor-2 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, 0);
+                animation-name: a2-in;
+
+                @keyframes a2-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0);
+                    }
+                }
+            }
+        }
+
+        &#actor-3 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a3-in;
+
+                @keyframes a3-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-4 {
+            &.zoomed-in img {
+                transform: scale(6) translate(-35.5%, 12%);
+                animation-name: a4-in;
+
+                @keyframes a4-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(6) translate(-35.5%, 12%);
+                    }
+                }
+            }
+        }
+
+        &#actor-5 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a5-in;
+
+                @keyframes a5-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-6 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a6-in;
+
+                @keyframes a6-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-7 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a7-in;
+
+                @keyframes a7-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-8 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a8-in;
+
+                @keyframes a8-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-9 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a9-in;
+
+                @keyframes a9-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-10 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a10-in;
+
+                @keyframes a10-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-11 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a11-in;
+
+                @keyframes a11-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-12 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a12-in;
+
+                @keyframes a12-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-13 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a13-in;
+
+                @keyframes a13-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-14 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a14-in;
+
+                @keyframes a14-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-15 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a15-in;
+
+                @keyframes a15-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-16 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a16-in;
+
+                @keyframes a16-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-17 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a17-in;
+
+                @keyframes a17-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-18 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a18-in;
+
+                @keyframes a18-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-19 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a19-in;
+
+                @keyframes a19-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
+        &#actor-20 {
+            &.zoomed-in img {
+                transform: scale(5) translate(0, -1%);
+                animation-name: a20-in;
+
+                @keyframes a20-in {
+                    from {
+                        transform: none;
+                    }
+
+                    to {
+                        transform: scale(5) translate(0, -1%);
+                    }
+                }
+            }
+        }
+
     }
 
-    &:hover {
-        img {
-            transform: scale(200%);
-        }
-    }
+}
+
+
+.space {
+    width: 100%;
+    height: 40vh;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0.5rem 0;
 }
