@@ -38,15 +38,22 @@ h1 {
 
         margin: 0 auto;
         width: 100%;
-        height: 56vh;
+        height: 64vh;
+
+        @media screen and (min-aspect-ratio: 2/1) {
+            width: 70%;
+            height: 90vh;
+        }
 
         display: flex;
 
         .actor-container-frame {
+            overflow: hidden;
+
             margin: auto;
             width: unset;
             height: unset;
-            overflow: hidden;
+            max-height: calc(100% - 32px);
             border-radius: 16px;
         }
 
@@ -63,13 +70,20 @@ h1 {
         }
 
         &.zoomed-in {
-            margin: 12vh auto;
+            margin: 16vh auto;
             width: 32vh;
             height: 32vh;
 
+            @media screen and (min-aspect-ratio: 2/1) {
+                margin: 15vh auto;
+                width: 60vh;
+                height: 60vh;
+            }
+    
             .actor-container-frame {
                 width: 100%;
                 height: 100%;
+                max-height: unset;
             }
 
             &#actor-1 img {
