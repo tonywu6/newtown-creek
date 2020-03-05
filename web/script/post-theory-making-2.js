@@ -5,7 +5,6 @@ function zoom(element) {
 
     actor = actor[0]
     $(actor).toggleClass('zoomed-in')
-    $(actor).toggleClass('zoomed-out')
     actor.offsetWidth;
 
     if ($(actor).hasClass('zoomed-in')) {
