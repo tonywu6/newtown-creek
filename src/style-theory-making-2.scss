@@ -24,17 +24,31 @@ h1 {
         white-space: nowrap;
     }
 
+    figure {
+        margin: 0;
+    }
+    
+    figcaption {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
     .actor-container {
-
-        overflow: hidden;
-
-        flex: 0 1 70%;
-
         box-sizing: border-box;
 
         margin: 0 auto;
         width: 100%;
         height: 56vh;
+
+        display: flex;
+
+        .actor-container-frame {
+            margin: auto;
+            width: unset;
+            height: unset;
+            overflow: hidden;
+            border-radius: 16px;
+        }
 
         img {
             position: relative;
@@ -53,6 +67,11 @@ h1 {
             width: 32vh;
             height: 32vh;
 
+            .actor-container-frame {
+                width: 100%;
+                height: 100%;
+            }
+
             &#actor-1 img {
                 transform: scale(4) translate(-0.5%, 8%);
             }
@@ -70,51 +89,51 @@ h1 {
             }
     
             &#actor-5 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(3) translate(0, 15%);
             }
     
             &#actor-6 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(3.5) translate(5.5%, 6%);
             }
     
             &#actor-7 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(5) translate(16%, -8%);
             }
     
             &#actor-8 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(6) translate(-8%, -5%);
             }
     
             &#actor-9 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(6) translate(-7%, -20%);
             }
     
             &#actor-10 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(3.2) translate(6%, -3%);
             }
     
             &#actor-11 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(7) translate(14.8%, 5.8%);
             }
     
             &#actor-12 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(3.5) translate(7.5%, 1%);
             }
     
             &#actor-13 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(5) translate(-8%, 1%);
             }
     
             &#actor-14 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(4.2) translate(-2.5%, -3%);
             }
     
             &#actor-15 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(7) translate(-2%, 2%);
             }
     
             &#actor-16 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(8) translate(3%, 1%);
             }
     
             &#actor-17 img {
@@ -122,11 +141,11 @@ h1 {
             }
     
             &#actor-18 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(5) translate(7%, 5%);
             }
     
             &#actor-19 img {
-                transform: scale(5) translate(0, -1%);
+                transform: scale(4) translate(0, 1%);
             }
     
             &#actor-20 img {
@@ -148,11 +167,3 @@ h1 {
     height: 40vh;
 }
 
-figure {
-    margin: 0;
-}
-
-figcaption {
-    text-align: center;
-    padding: 0.5rem 0;
-}
