@@ -101,6 +101,7 @@ public
 /deploy
 /client
 /apps
+.vscode
 
 # Python
 .venv

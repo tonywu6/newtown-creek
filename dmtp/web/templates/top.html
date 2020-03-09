@@ -10,13 +10,11 @@
             <nav>
                 <ul id="subway-nav" class="subway-sign highlighter">
                     {% for route in routes %}
-                    {% if route['hidden'] is false or (route['hidden'] is iterable and this not in route['hidden']) %}
                     <li class="subway-li">
                         <span class="subway-label hl hl-colored {{ route['decoration'] }}">
                             <a href="{{ route['url'] }}">{{ route['name'] }}</a>
                         </span>
                     </li>
-                    {% endif %}
                     {% endfor %}
                 </ul>
             </nav>
