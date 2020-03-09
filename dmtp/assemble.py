@@ -51,7 +51,7 @@ def build():
         dest = f'./web/{r}'
         with open(dest, 'w+') as f:
             f.write(web_env.get_template(r).render(this=r, title=p['name'], routes=routes))
-            subprocess.run(['js-beautify', '-r', dest])
+            subprocess.run(['npx', 'js-beautify', '-r', dest])
 
 
 def publish():
@@ -60,3 +60,7 @@ def publish():
     opts = {"force": True, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn'}
     s = UploadSynchronizer(web, remote, opts)
     s.run()
+
+
+def serve():
+    subprocess.run(['npx', 'serve', '-S', './web'])
