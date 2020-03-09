@@ -1,0 +1,19 @@
+{% extends 'templates/base.html' %}
+
+{% block body %}
+
+{% block header %}
+<header>
+    <h1>{{ title }}</h1>
+</header>
+{% endblock %}
+
+<article>
+    <div id="floating-title">
+        <h3>{{ title }}</h3>
+    </div>
+    {% block article %}
+    {% endblock %}
+</article>
+
+{% endblock %}

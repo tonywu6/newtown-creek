@@ -8,6 +8,9 @@ verify_ssl = true
 [packages]
 beautifulsoup4 = "*"
 simplejson = "*"
+click = "*"
+jinja2 = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
