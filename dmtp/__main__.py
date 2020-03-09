@@ -30,6 +30,12 @@ def build():
 
 
 @cli.command()
+def serve():
+    assemble.build()
+    assemble.serve()
+
+
+@cli.command()
 def publish():
     assemble.build()
     assemble.publish()
