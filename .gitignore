@@ -99,14 +99,14 @@ public
 
 # local
 /deploy
-/static
 /client
 /apps
 
-# Pipenv
+# Python
 .venv
+__pycache__
 
 # Project specific
-/web/build
-/web/api/metadata.json
+/web
 .venv
+.pyftpsync-meta.json
