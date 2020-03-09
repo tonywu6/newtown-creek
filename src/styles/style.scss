@@ -46,7 +46,7 @@ a:hover {
         top: 0px;
         background-color: colors.$onedark-blue-darkest;
 
-        nav {
+        #navigation {
             background-color: unset;
         }
     }
@@ -95,7 +95,7 @@ a:hover {
 
     nav {
         padding: 10px;
-        margin: 0 0 10px;
+        margin: 0;
         width: min-content;
 
         ul {
@@ -364,6 +364,30 @@ mark {
         }
     }
 
+}
+
+.gallery {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-content: space-around;
+    justify-content: space-evenly;
+
+    .tile-container {
+        overflow: hidden;
+        flex: 0 1 90%;
+        margin: 1% 1%;
+    }
+
+    .media-content {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 li:last-of-type {

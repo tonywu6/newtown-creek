@@ -1,11 +1,8 @@
 {
-  "name": "dmtp-mcc1031-tonywu",
+  "name": "tonywu-nyu-dmtp-s20",
   "version": "1.0.0",
   "description": "DMTP",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "private": true,
   "author": "Tony Wu <tony.wu@nyu.edu>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
