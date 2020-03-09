@@ -49,15 +49,24 @@ def build():
 
     for r, p in metadata['pages'].items():
         dest = f'./web/{r}'
+        rts = [
+            route for route in routes
+            if not (route['hidden'] is True or r in route['hidden'])
+        ]
         with open(dest, 'w+') as f:
-            f.write(web_env.get_template(r).render(this=r, title=p['name'], routes=routes))
+            f.write(
+                web_env.get_template(r).render(
+                    this=r,
+                    title=p['name'],
+                    routes=rts,
+                ))
             subprocess.run(['npx', 'js-beautify', '-r', dest])
 
 
 def publish():
     web = FsTarget('./web')
     remote = FtpTarget('/', os.getenv('FTP_HOST'), username=os.getenv('FTP_USERNAME'), password=os.getenv('FTP_PASSWORD'))
-    opts = {"force": True, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn'}
+    opts = {"force": False, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn'}
     s = UploadSynchronizer(web, remote, opts)
     s.run()
 

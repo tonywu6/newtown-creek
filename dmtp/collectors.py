@@ -16,7 +16,7 @@
 
 import bs4
 import simplejson
-from jinja2 import Environment
+from jinja2 import Environment, Template
 
 
 def parse_script_tag(html_text):
@@ -26,18 +26,20 @@ def parse_script_tag(html_text):
     return dict()
 
 
+def get_metadata(env: Environment, template: Template, context: dict = None) -> dict:
+    context = context or dict()
+    metadata_tag = getattr(template.make_module(context), 'metadata', '<script></script>')
+    return parse_script_tag(metadata_tag)
+
+
 def collect_metadata(env: Environment, tmpls: list, base_md: dict = None, context: dict = None) -> dict:
     base_md = base_md or dict()
-    context = context or dict()
 
     metadata = {**base_md}
 
     metadata['pages'] = dict()
     for tmpl in tmpls:
-        tmpl_module = env.get_template(tmpl).make_module(context)
-        metadata_tag = getattr(tmpl_module, 'metadata', '<script></script>')
-
-        metadata['pages'][tmpl] = parse_script_tag(metadata_tag)
+        metadata['pages'][tmpl] = get_metadata(env, env.get_template(tmpl), context)
 
     return metadata
 
@@ -57,7 +59,8 @@ def collect_routes(metadata: dict) -> list:
             nav = data['navigation']
             r['order'] = nav.get('order', 100)
             r['decoration'] = nav.get('decoration', 'color-white-bg')
-            r['hidden'] = nav.get('hidden', False)
+            r['hidden'] = nav.get('hidden', list())
+            r['hidden'] = list() if not r['hidden'] else r['hidden']
 
     routes = sorted(routes, key=lambda r: r['order'])
     return routes
