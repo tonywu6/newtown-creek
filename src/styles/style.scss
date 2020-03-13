@@ -6,7 +6,7 @@ body {
     color: colors.$onedark-white;
     font-family: 'Helvetica Neue', 'Helvetica', -apple-system, BlinkMacSystemFont, 'Noto Sans', Ubuntu, 'Open Sans', sans-serif;
 
-    margin: 2%;
+    margin: 0;
 }
 
 a {
@@ -313,6 +313,11 @@ mark {
     border-radius: 2px;
 }
 
+hr {
+    border: 0.8px solid colors.$onedark-gray-darker;
+    margin: 2rem 12pt;
+}
+
 .subway-li {
     margin: 0 0 6pt;
     padding: 0;
@@ -375,18 +380,50 @@ mark {
     flex-wrap: wrap;
 
     align-content: space-around;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
     .tile-container {
         overflow: hidden;
-        flex: 0 1 90%;
-        margin: 1% 1%;
+        flex: 0 1 100%;
     }
 
     .media-content {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    &.small-gallery {
+        width: 60vw;
+        .tile-container {
+            flex: unset;
+            width: 12vw;
+            height: 12vw;
+            margin: 12px 6px;
+            border-radius: 10px;
+
+            &:hover {
+                border: 2px solid colors.$std-yellow;
+                margin: 10px 4px;
+            }
+
+            a {
+                width: 100%;
+                display: block;
+                object-fit: cover;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        @media screen and (max-width: 768px) {
+            width: 95vw;
+            .tile-container {
+                width: 20vw;
+                height: 20vw;    
+            }
+        }
     }
 }
 
@@ -404,4 +441,18 @@ li:last-of-type {
 
 audio {
     width: 100%;
+}
+
+video {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td img {
+    max-width:100%;
+    height:auto;
 }
