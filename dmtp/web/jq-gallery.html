@@ -1,0 +1,138 @@
+{% extends 'templates/base.html' %}
+
+{% set title = 'Photo Gallery' %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="script/jq-gallery.js"></script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+{% block body %}
+
+<header>
+    <h1>Photo Gallery</h1>
+</header>
+
+<div class="gallery small-gallery">
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w4/w4-operatic-9.jpg">
+            <img src="static/img/w7/thumb-w4-operatic-9_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w7/w7-gallery-1.jpg">
+            <img src="static/img/w7/thumb-w7-gallery-1_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w7/w7-gallery-3.jpg">
+            <img src="static/img/w7/thumb-w7-gallery-3_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w4/w4-operatic-12.jpg">
+            <img src="static/img/w7/thumb-w4-operatic-12_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-13.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-13_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-8.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-8_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-28.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-28_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-26.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-26_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w7/w7-gallery-5.jpg">
+            <img src="static/img/w7/thumb-w7-gallery-5_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-21.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-21_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-22.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-22_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-17.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-17_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-25.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-25_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w5/illustration-theory-affect-1.jpg">
+            <img src="static/img/w7/thumb-illustration-theory-affect-1_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-5.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-5_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w6/w6-hungry-27.jpg">
+            <img src="static/img/w7/thumb-w6-hungry-27_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w4/w4-operatic-6.jpg">
+            <img src="static/img/w7/thumb-w4-operatic-6_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w7/w7-gallery-2.jpg">
+            <img src="static/img/w7/thumb-w7-gallery-2_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w3-NewtownCreek/w3-4.jpg">
+            <img src="static/img/w7/thumb-w3-4_1.jpg" alt="" />
+        </a>    
+    </div>
+    <div class="tile-container">
+        <a data-fancybox="photo-gallery" data-caption="" href="static/img/w7/w7-gallery-4.jpg">
+            <img src="static/img/w7/thumb-w7-gallery-4_1.jpg" alt="" />
+        </a>    
+    </div>
+</div>
+
+{% endblock %}
+
+{% set metadata %}
+<script type="application/json">
+    {
+        "name": "Photo Gallery",
+        "navigation": {
+            "decoration": "color-cyan-bg",
+            "hidden": false,
+            "order": 25
+        }
+    }
+</script>
+{% endset %}
