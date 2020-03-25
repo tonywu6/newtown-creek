@@ -16,7 +16,8 @@
 *.py filter=lfs diff=lfs merge=lfs -text
 *.m4a filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.sesx filter=lfs diff=lfs merge=lfs -text
 * !text !filter !merge !diff
 *.m4v filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text

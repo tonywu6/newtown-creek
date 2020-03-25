@@ -111,3 +111,6 @@ __pycache__
 /web
 .venv
 .pyftpsync-meta.json
+
+# Adobe
+/media/audio/*/Backup/*.sesx

@@ -1,0 +1,19 @@
+{% extends 'templates/article.html' %}
+
+{% set title = 'Sound Project Rough Draft' %}
+{% block article %}
+<audio controls>
+    <source src="static/audio/w9/sound-project-rough.m4a" type="audio/mp4"></audio>
+{% endblock %}
+
+{% set metadata %}
+<script type="application/json">
+    {
+        "name": "Sound Project: Rough Draft",
+        "navigation": {
+            "decoration": "color-magenta-bg",
+            "order": 30
+        }
+    }
+</script>
+{% endset %}
