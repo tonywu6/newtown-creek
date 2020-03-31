@@ -1,0 +1,23 @@
+{% extends 'templates/article.html' %}
+
+{% set title = 'Video Scratch Clips' %}
+{% block article %}
+<video controls>
+    <source src="static/video/w10/C0003.mp4" type="video/mp4"></video>
+<video controls>
+    <source src="static/video/w10/C0004.m4v" type="video/mp4"></video>
+<video controls>
+    <source src="static/video/w10/IMG_1685.mp4" type="video/mp4"></video>
+{% endblock %}
+
+{% set metadata %}
+<script type="application/json">
+    {
+        "name": "Video: Scratch Clips",
+        "navigation": {
+            "decoration": "color-red-bg",
+            "order": 40
+        }
+    }
+</script>
+{% endset %}
