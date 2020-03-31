@@ -1,0 +1,19 @@
+{% extends 'templates/article.html' %}
+
+{% set title = 'Sound Project Second Draft' %}
+{% block article %}
+<audio controls>
+    <source src="static/audio/w10/sound-project-draft-2.m4a" type="audio/mp4"></audio>
+{% endblock %}
+
+{% set metadata %}
+<script type="application/json">
+    {
+        "name": "Sound Project Second Draft",
+        "navigation": {
+            "decoration": "color-magenta-bg",
+            "order": 41
+        }
+    }
+</script>
+{% endset %}
