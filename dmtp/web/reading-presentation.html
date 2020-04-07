@@ -1,0 +1,204 @@
+{% extends 'templates/article.html' %}
+
+{% set title = 'Reading Presentation' %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="styles/style-theory-making-2.css">
+<style>
+    video {
+        max-width: 480px;
+        margin: 1rem auto;
+    }
+</style>
+{% endblock %}
+
+{% block header %}
+<!-- <header>
+    <h1>{{ title }}</h1>
+</header> -->
+{% endblock %}
+
+{% set metadata %}
+<script type="application/json">
+    {
+        "name": "Reading Presentation",
+        "navigation": {
+            "decoration": "color-yellow-bg",
+            "order": 60,
+            "hidden": true
+        }
+    }
+</script>
+{% endset %}
+
+{% block article %}
+
+<h1>Evil media …</h1>
+
+<p>Media systems are <em>evil</em> not necessarily because they are harmful, sinister, or morally bad. Instead, it is because they are obscure and opaque, while pervasive and essential to modern life.</p>
+
+<h1>… as illustrated by the COVID-19 pandemic</h1>
+
+<p>To be able to better answer this question, we look at the COVID-19 pandemic, in which we suddenly find ourselves thrust into a world of hyper-digitization and hyper-mediation.</p>
+
+<hr />
+
+<p>(algorithms)</p>
+
+<h3><strong>abstraction &amp; recursion</strong></h3>
+
+<ul>
+    <li><em>Abstraction</em> as a practice/technique in programming/algorithm design, in which a complex problem is broken down (abstracted) into smaller, simpler problems;</li>
+    <li><em>Abstraction</em> as a social and cultural process — in our everyday life: “flowcharts, naming conventions (the ‘end-user’), design tools, programming libraries, assembly languages, and so on”
+
+        <ul>
+            <li><strong>finite-state machine</strong> “machines” (systems, things) that changes itself (state) according to some input and its defined rules; they are everywhere:</li>
+            <li><em>Who gets tested for COVID-19? Calculation of stimulus check?</em></li>
+        </ul>
+    </li>
+</ul>
+<video autoplay loop>
+    <source src="static/video/w11/flow.mp4">
+</video>
+
+<ul>
+    <li><em>Recursion</em> as a form of abstraction: the application of logic onto itself;
+
+        <ul>
+            <li><em>A programming example of both abstraction and recursion:</em> sorting a list of 10,000 things → sorting 2 lists of 5,000 things and then combining them → sorting 5,000 lists of 2 things and then combining them</li>
+            <li><em>A material example of recursion:</em> the similar governmental structure for the city (legislature, administration, courthouse) is repeated at the state and federal (national) levels</li>
+        </ul>
+    </li>
+</ul>
+
+<video autoplay loop>
+    <source src="static/video/w11/python.mp4">
+</video>    
+
+<ul>
+    <li><em>Recursion</em> as the design for an autonomous, self-sustaining system of control (which is not realized yet);</li>
+    <li><mark>They are “evil” because</mark> contrived abstractions and recursions do not necessarily work in the same way as the complex problem they are trying to solve (not working as intended)</li>
+    <li>Yet it is incredibly difficult to figure out exactly what went wrong because abstraction entails obscuring and hiding of the actual problem</li>
+</ul>
+
+<video autoplay loop>
+    <source src="static/video/w11/fork.mp4">
+</video>
+<p>A forkbomb is a form of malicious recursion</p>
+
+<p><strong>During the pandemic…</strong></p>
+
+<video autoplay loop>
+    <source src="static/video/w11/zoom.mp4">
+</video>    
+
+<ul>
+    <li><em>Zoom inadvertently redirecting its traffic to servers in China.</em> Among the many privacy issues Zoom is accused of having is the discovery that in February, some of Zoom’s international traffic were rerouted through its servers in China “to ease server load elsewhere.”</li>
+    <li>Here, the internet is operating <em>exactly as it was envisioned to work:</em> internet servers ultimately operate on a very simple rule: data always try to flow towards servers with a lighter load to avoid congestion;</li>
+    <li>Here, the controversy arises because the abstraction of the internet failed to account for the complex reality of geopolitics and the disregard for privacy in China’s internet security regulations.</li>
+</ul>
+
+<hr />
+
+<h3><strong>queueing &amp; sorting</strong></h3>
+
+<ul>
+    <li><em>Queueing</em> is a ubiquitous practice in society — as a means to allocate resources;</li>
+    <li>Despite a “digital abundance,” the structure of queueing persists, to uphold a system of waiting and deferral.</li>
+    <li><em>Queueing</em> goes in tandem with <em>sorting:</em> determining how to order the elements in a queue → determining the manner of allocation (first-in-first-out, ladies first, etc)</li>
+    <li><em>Sorting</em> necessarily entails <em>abstraction:</em> for a media system to sort, there must be some ways to reduce complex objects (subjects), such as people, into simple, mediated “keys,” such as names and ID numbers;</li>
+    <li><mark>They are “evil” because</mark> such obscuration of complexity almost always leads to exceptions being overlooked, varieties being overridden, and nuances being flattened.</li>
+</ul>
+
+<p><strong>During the pandemic…</strong></p>
+
+<video autoplay loop>
+    <source src="static/video/w11/code.m4v">
+</video>    
+
+<ul>
+    <li><em>The rapid, large-scale, and uncontested roll-out of a “health code” system in China because of the epidemic.</em> In this system, each person is assigned a QR code in three colors, indicating their evaluated risk of being infected by COVID-19.</li>
+    <li>The code is calculated based on myriad factors, including their travel history and location of residence, aggregated from sources throughout the nation. The system is simultaneously enigmatic and swift: someone traveling freely with a green code may find themselves tagged red and forced to stay home the next day, their daily life jeopardized.</li>
+    <li>Some fear the system will persist after the pandemic (as there is no legal basis nor safeguards) and finally realize the kind of social control seen in dystopian novels. (Or to ask it bluntly: will it become the next <strong>yellow badge?</strong>)</li>
+</ul>
+
+<hr />
+
+<p>(togetherness)</p>
+
+<p><mark>All collective media systems require the use of the aforementioned algorithms</mark> to aggregate, categorize, sort, filter, manipulate, and control people.</p>
+
+<h3><strong>rationalization</strong></h3>
+
+<ul>
+    <li>The modern media systems have the power (and appetite) to rationalize every aspect, including our body, emotions, and experience.</li>
+    <li><strong>algorithmic romance</strong></li>
+    <li>
+        <blockquote>
+            <p>At the same time as contemporary media establish new conditions for the arrangement of love, it also increasingly finds its echo in the proliferation of algorithmic approaches to romantic pursuits.</p>
+        </blockquote>
+    </li>
+    <li><strong>standardization of life</strong></li>
+    <li>
+        <blockquote>
+            <p>… No stage of a relationship is left unadvised; makeup tips for post-breakup good looks are a great way of combining advertorial with advice …</p>
+        </blockquote>
+    </li>
+    <li><strong>boredom as fuel (for content)</strong></li>
+    <li>
+        <blockquote>
+            <p>… an itchy, iterative kind of boredom, an irritation against doing something pointless, onerous, and endless. Symptoms of this irritation can momentarily be alleviated by clicking on a link, casting an eye on some porn, twitching on some game, catching up on the news, making a status update.</p>
+        </blockquote>
+    </li>
+    <li><strong>minimal signals</strong></li>
+    <li>
+        <blockquote>
+            <p>Sophisticated technology requires users to be enrolled into an economy of minimal movement (except for gestural interfaces at the scale of games).</p>
+        </blockquote>
+    </li>
+    <li>
+        <blockquote>
+            <p>… software-based media forms offer a powerful set of devices for translating a range of background practices of everyday life into the new but deceptively familiar world of pointing and clicking, dragging and dropping, cutting and pasting.</p>
+        </blockquote>
+    </li>
+    <li><mark>They are “evil,”</mark> as software, data, and algorithms disguise themselves as the surrogate of our desire, emotions, and corporeal experience.</li>
+</ul>
+
+<p><strong>During the pandemic…</strong></p>
+
+<ul>
+    <li>As we are compelled to stay at home, <em>such rationalization turns from mere gratification into a kind of necessity:</em> now we have to be attached to the hyper-connected media systems.</li>
+</ul>
+
+<hr />
+
+<h3><strong>control</strong></h3>
+
+<ul>
+    <li><strong>crowdsourcing</strong></li>
+    <li>
+        <blockquote>
+            <p>Crowdsourcing differs crucially from this earlier phase in the ways that the current means of extracting, working, and distributing collective intelligence operate through computational and networked digital media.</p>
+        </blockquote>
+    </li>
+    <li><em>hackathons, bug bounty programs, contests, open-source communities, <strong>CC SA</strong></em></li>
+    <li>Pay attention to the license (who owns the work, who can use it) and labor (who gets compensated … or not)</li>
+    <li><strong>social engineering</strong></li>
+    <li>The reversal of Searle’s “Chinese Room”: the machine is outside, and we are in the room –– the suppression of “mind” in the room.</li>
+    <li>
+        <blockquote>
+            <p>Social engineering here is the skill of ensuring that inside the box, the instructions, from one source or another, are being followed correctly, no matter what they are.</p>
+        </blockquote>
+    </li>
+    <li><mark>They are “evil,”</mark> as new, modern forms of exploitation and control, against which old forms of struggles (e.g. labor unions) become increasingly ineffective</li>
+</ul>
+
+<p><strong>During the pandemic…</strong></p>
+
+<ul>
+    <li><em>The gig economy:</em> drivers, delivery workers as semi-crowdsourcing wage labor? (as software platforms and inbuilt algorithms dictate their work, yet they may not enjoy the same labor benefits as other sectors of labor).</li>
+    <li><em>Open-source hardware designing:</em> ventilators, masks, PPEs. Does the proliferation of crowdsourcing design help mask the fact that the federal government is woefully inadequate in handling resource shortage?</li>
+</ul>
+
+{% endblock %}

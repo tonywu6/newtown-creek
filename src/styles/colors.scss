@@ -55,14 +55,14 @@ $ulysses-pink: rgb(214, 76, 154);
     background-color: $onedark-green;
 }
 
+.color-yellow-bg {
+    background-color: $onedark-yellow;
+}
+
 .color-95-translucent {
     background-color: $onedark-blue-darkest-95;
 }
 
 .rotate-45 {
     transform: rotate(45deg);
-}
-
-.color-darker-bg {
-    background-color: $darker;
 }
