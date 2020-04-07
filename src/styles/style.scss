@@ -440,12 +440,15 @@ li:last-of-type {
 }
 
 audio {
-    width: 100%;
+    width: 80%;
+    margin: 1rem 0;
+    display: block;
 }
 
 video {
     width: 100%;
     margin: 1rem 0;
+    display: block;
 }
 
 table {
