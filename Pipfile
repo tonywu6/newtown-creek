@@ -6,11 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-beautifulsoup4 = "*"
+beautifulsoup4 = "4.9"
 simplejson = "*"
 click = "*"
 jinja2 = "*"
 python-dotenv = "*"
+pyftpsync = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
