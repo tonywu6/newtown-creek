@@ -271,6 +271,15 @@ blockquote {
     background-color: rgb(42, 61, 71);
 }
 
+li blockquote {
+    font-size: 1em;
+    margin: 0;
+    padding: 0.2rem 0.4rem;
+    color: colors.$ulysses-blue;
+    background-color: rgb(42, 61, 71);
+    border-radius: 4px;
+}
+
 ul {
     // list-style: square outside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
     list-style: square outside url('data:image/gif;base64,R0lGODdhBQAKAJEAAAAAAP///wAAAAAAACH5BAkAAAIALAAAAAAFAAoAAAIIlI+ZwawPUQEAOw==');
@@ -441,13 +450,13 @@ li:last-of-type {
 
 audio {
     width: 80%;
-    margin: 1rem 0;
+    margin: 1rem auto;
     display: block;
 }
 
-video {
+video, iframe {
     width: 100%;
-    margin: 1rem 0;
+    margin: 1rem auto;
     display: block;
 }
 

@@ -59,6 +59,46 @@ $ulysses-pink: rgb(214, 76, 154);
     background-color: $onedark-yellow;
 }
 
+.color-darker-bg {
+    background-color: $darker;
+}
+
+.color-cyan-fg {
+    color: $onedark-cyan;
+}
+
+.color-100-white-fg {
+    color: white;
+}
+
+.color-white-fg {
+    color: $onedark-white;
+}
+
+.color-blue-fg {
+    color: $onedark-blue;
+}
+
+.color-magenta-fg {
+    color: $onedark-magenta;
+}
+
+.color-red-fg {
+    color: $onedark-red;
+}
+
+.color-green-fg {
+    color: $onedark-green;
+}
+
+.color-darker-fg {
+    color: $darker;
+}
+
+.color-yellow-fg {
+    color: $onedark-yellow;
+}
+
 .color-95-translucent {
     background-color: $onedark-blue-darkest-95;
 }

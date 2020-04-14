@@ -11,7 +11,7 @@
                 <ul id="subway-nav" class="subway-sign highlighter">
                     {% for route in routes %}
                     <li class="subway-li">
-                        <span class="subway-label hl hl-colored {{ route['decoration'] }}">
+                        <span class="subway-label hl hl-colored color-{{ route['color'] }}-bg">
                             <a href="{{ route['url'] }}">{{ route['name'] }}</a>
                         </span>
                     </li>

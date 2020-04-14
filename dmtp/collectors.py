@@ -22,7 +22,7 @@ from jinja2 import Environment, Template
 def parse_script_tag(html_text):
     metadata = bs4.BeautifulSoup(html_text, 'html.parser').find('script')
     if metadata:
-        return simplejson.loads(metadata.text)
+        return simplejson.loads(metadata.string)
     return dict()
 
 
@@ -49,7 +49,7 @@ def collect_routes(metadata: dict) -> list:
         'url': k,
         'name': v.get('name', k),
         'order': 100,
-        'decoration': '',
+        'color': '',
         'hidden': True,
     } for k, v in metadata['pages'].items()]
 
@@ -58,7 +58,7 @@ def collect_routes(metadata: dict) -> list:
         if 'navigation' in data:
             nav = data['navigation']
             r['order'] = nav.get('order', 100)
-            r['decoration'] = nav.get('decoration', 'color-white-bg')
+            r['color'] = nav.get('color', 'white')
             r['hidden'] = nav.get('hidden', list())
             r['hidden'] = list() if not r['hidden'] else r['hidden']
 

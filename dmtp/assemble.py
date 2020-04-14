@@ -49,10 +49,13 @@ def build():
 
     for r, p in metadata['pages'].items():
         dest = f'./web/{r}'
-        rts = [
-            route for route in routes
-            if not (route['hidden'] is True or r in route['hidden'])
-        ]
+        if r == 'sitemap.html':
+            rts = sorted(routes, key=lambda r: r['name'])
+        else:
+            rts = [
+                route for route in routes
+                if not (route['hidden'] is True or r in route['hidden'])
+            ]
         with open(dest, 'w+') as f:
             f.write(
                 web_env.get_template(r).render(

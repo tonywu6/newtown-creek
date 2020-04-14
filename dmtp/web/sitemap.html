@@ -2,17 +2,22 @@
 
 {% block article %}
 
-<h1>DM:TP</h1>
+<ul>
+    {% for route in routes %}
+    <li><a href="{{ route.url }}" class="color-{{ route.color }}-fg">{{ route.name }}</a></li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
+
 
 {% set metadata %}
 <script type="application/json">
     {
-        "name": "About",
+        "name": "Sitemap",
         "navigation": {
             "color": "white",
-            "order": 1
+            "order": 99
         }
     }
 </script>
