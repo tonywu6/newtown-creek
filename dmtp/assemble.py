@@ -60,7 +60,6 @@ def build():
             f.write(
                 web_env.get_template(template).render(
                     this=template,
-                    title=page['name'],
                     routes=routes,
                 ))
             # subprocess.run(['npx', 'js-beautify', '-r', dest])

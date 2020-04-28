@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Photos: Gallery Photo Candidates" %}
+{% set short_title = "Photo Candidates" %}
+{% set topic = "misc.photo_candidates" %}
+
 {% block article %}
 
 <div class="gallery">
@@ -32,12 +36,3 @@
 <p><a href="https://github.com/artpolikarpov/fotorama">https://github.com/artpolikarpov/fotorama</a></p>
 
 {% endblock %}
-
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Photo Gallery Candidates",
-        "color": "cyan"
-    }
-</script>
-{% endset %}

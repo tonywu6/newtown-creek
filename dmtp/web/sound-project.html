@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Sound Project: Sound Survey" %}
+{% set short_title = "Sound Survey" %}
+{% set topic = "sound.final" %}
+
 {% block article %}
 <audio controls>
     <source src="static/audio/sound-project/sound-project-final.m4a" type="audio/mp4"></audio>
@@ -8,11 +12,3 @@
 <p>This audio project is a sound survey of Newtown Creek and the neighborhoods in close proximity to it. It consists of two parts. The first part is an introduction to the sound elements in the ecology, which are grouped as “water,” “living beings,” and “machines.” After the introduction, the second part is a mixing of these elements. The choice to not use transitions between sounds in the second part serves to illustrate the contradiction between the environment and industrial production in the ecology. Left/right channel panning is used to recreate a sense of spaciousness.</p>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Sound Project: Sound Survey",
-        "color": "magenta"
-    }
-</script>
-{% endset %}

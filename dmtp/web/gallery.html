@@ -1,5 +1,9 @@
 {% extends 'templates/base.html' %}
 
+{% set title = "Photos: Gallery" %}
+{% set short_title = "Gallery" %}
+{% set topic = "photo.gallery" %}
+
 {% block scripts %}
 {{ super() }}
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -122,11 +126,3 @@
 
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Photo Gallery",
-        "color": "cyan"
-    }
-</script>
-{% endset %}

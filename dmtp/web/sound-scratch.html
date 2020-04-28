@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Sound Project: Scratch Tracks" %}
+{% set short_title = "Scratch Tracks" %}
+{% set topic = "misc.sound_scratch" %}
+
 {% block article %}
 <audio controls>
     <source src="static/audio/recordings/200302_0209.m4a" type="audio/mp4"></audio>
@@ -9,11 +13,3 @@
     <source src="static/audio/recordings/200302_0225.m4a" type="audio/mp4"></audio>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Sound Project: Scratch Tracks",
-        "color": "magenta"
-    }
-</script>
-{% endset %}

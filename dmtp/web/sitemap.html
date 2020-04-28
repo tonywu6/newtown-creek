@@ -1,5 +1,8 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Sitemap" %}
+{% set topic = "sitemap.main" %}
+
 {% block article %}
 
 <ul>
@@ -11,11 +14,3 @@
 {% endblock %}
 
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Sitemap",
-        "color": "white"
-    }
-</script>
-{% endset %}

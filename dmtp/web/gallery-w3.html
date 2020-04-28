@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Photos: Survey 1" %}
+{% set short_title = "Survey 1" %}
+{% set topic = "misc.survey_1" %}
+
 {% block article %}
 
 <div class="gallery">
@@ -16,12 +20,3 @@
 </div>
 
 {% endblock %}
-
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Photos: Survey #1",
-        "color": "cyan"
-    }
-</script>
-{% endset %}

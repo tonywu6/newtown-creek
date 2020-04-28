@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Video Project: Scratch Tracks" %}
+{% set short_title = "Scratch Tracks" %}
+{% set topic = "misc.video_scratch" %}
+
 {% block article %}
 <video controls>
     <source src="static/video/video-project/scratch/C0003.mp4" type="video/mp4"></video>
@@ -9,11 +13,3 @@
     <source src="static/video/video-project/scratch/IMG_1685.mp4" type="video/mp4"></video>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Video Project: Scratch Clips",
-        "color": "red"
-    }
-</script>
-{% endset %}
