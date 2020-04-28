@@ -17,6 +17,7 @@
 import os
 import shutil
 import subprocess
+import warnings
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -47,20 +48,26 @@ def build():
     metadata = collectors.collect_metadata(web_env, pages)
     routes = collectors.collect_routes(metadata)
 
-    for r, p in metadata['pages'].items():
-        dest = f'./web/{r}'
-        if r == 'sitemap.html':
+    for template, page in metadata['pages'].items():
+        dest = f'./web/{template}'
+        if template == 'sitemap.html':
             rts = sorted(routes, key=lambda r: r['name'])
         else:
             rts = [
                 route for route in routes
-                if not (route['hidden'] is True or r in route['hidden'])
+                if not (route['hidden'] is True or template in route['hidden'])
             ]
+
+        for l in page['refs']:
+            l: collectors.Hyperlink
+            if l.is_local() and not l.exists():
+                warnings.warn(ResourceNotFoundWarning(template, l.tag))
+
         with open(dest, 'w+') as f:
             f.write(
-                web_env.get_template(r).render(
-                    this=r,
-                    title=p['name'],
+                web_env.get_template(template).render(
+                    this=template,
+                    title=page['name'],
                     routes=rts,
                 ))
             # subprocess.run(['npx', 'js-beautify', '-r', dest])
@@ -76,3 +83,12 @@ def publish():
 
 def serve():
     subprocess.run(['npx', 'serve', '-S', './web'])
+
+
+class ResourceNotFoundWarning(UserWarning):
+    def __init__(self, file, tag):
+        self.file = file
+        self.tag = tag
+
+    def __str__(self):
+        return f'{self.tag} in {self.file}'
