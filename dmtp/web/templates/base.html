@@ -10,8 +10,10 @@
     <title>{{ title|default('', true) + ' | DMTP Spring 2020' }}</title>
 
     {% block styles %}
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     {% endblock %}
+
     {% block scripts %}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="script/app.js"></script>

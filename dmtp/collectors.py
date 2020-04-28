@@ -89,22 +89,6 @@ def collect_metadata(env: Environment, tmpls: list, base_md: dict = None, contex
 
 
 def collect_routes(metadata: dict) -> list:
-    routes = [{
-        'url': k,
-        'name': v.get('name', k),
-        'order': 100,
-        'color': '',
-        'hidden': True
-    } for k, v in metadata['pages'].items()]
-
-    for r in routes:
-        data = metadata['pages'][r['url']]
-        if 'navigation' in data:
-            nav = data['navigation']
-            r['order'] = nav.get('order', 100)
-            r['color'] = nav.get('color', 'white')
-            r['hidden'] = nav.get('hidden', list())
-            r['hidden'] = list() if not r['hidden'] else r['hidden']
-
-    routes = sorted(routes, key=lambda r: r['order'])
+    routes = [dict(url=k, **v) for k, v in metadata['pages'].items()]
+    routes = sorted(routes, key=lambda r: r['name'])
     return routes

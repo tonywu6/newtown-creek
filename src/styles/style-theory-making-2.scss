@@ -1,11 +1,20 @@
 @use 'colors';
+@use "fonts";
+
 
 h1 {
     color: colors.$ulysses-pink;
     font-weight: 300;
-    font-size: 4rem;
+    font-size: 5em;
     text-align: right;
     margin: 40vh 0 50vh;
+}
+
+article p,
+article li,
+figcaption {
+    font-family: "Lato", fonts.$sans-serif-fonts;
+    font-weight: 500;
 }
 
 .actor {
@@ -20,6 +29,7 @@ h1 {
 
     .subway-label {
         margin: 0 0 0 auto;
+        font-family: fonts.$sans-serif-fonts;
         font-size: 1em;
         white-space: nowrap;
     }
@@ -188,6 +198,14 @@ h1 {
 
 #collage-edit {
     width: 100%;
+    display: block;
     box-sizing: border-box;
-    padding: 0 0 5rem;
+    margin: 2.5rem 0 0;
+    box-shadow: 0 0 20px 0 #000000;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        z-index: -2;
+    }
 }
