@@ -4,12 +4,12 @@ module.exports = {
         commonjs: true,
         es6: true,
         node: true,
-        jquery: true,
+        jquery: true
     },
     extends: 'eslint:recommended',
     globals: {
         Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly',
+        SharedArrayBuffer: 'readonly'
     },
     parserOptions: {
         ecmaVersion: 2018,

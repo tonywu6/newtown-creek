@@ -63,7 +63,7 @@ def build():
                     title=p['name'],
                     routes=rts,
                 ))
-            subprocess.run(['npx', 'js-beautify', '-r', dest])
+            # subprocess.run(['npx', 'js-beautify', '-r', dest])
 
 
 def publish():
