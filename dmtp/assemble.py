@@ -50,13 +50,6 @@ def build():
 
     for template, page in metadata['pages'].items():
         dest = f'./web/{template}'
-        if template == 'sitemap.html':
-            rts = sorted(routes, key=lambda r: r['name'])
-        else:
-            rts = [
-                route for route in routes
-                if not (route['hidden'] is True or template in route['hidden'])
-            ]
 
         for l in page['refs']:
             l: collectors.Hyperlink
@@ -68,7 +61,7 @@ def build():
                 web_env.get_template(template).render(
                     this=template,
                     title=page['name'],
-                    routes=rts,
+                    routes=routes,
                 ))
             # subprocess.run(['npx', 'js-beautify', '-r', dest])
 
