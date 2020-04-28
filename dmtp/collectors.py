@@ -50,7 +50,7 @@ def collect_routes(metadata: dict) -> list:
         'name': v.get('name', k),
         'order': 100,
         'color': '',
-        'hidden': True,
+        'hidden': True
     } for k, v in metadata['pages'].items()]
 
     for r in routes:
