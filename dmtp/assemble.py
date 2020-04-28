@@ -61,6 +61,7 @@ def build():
                 web_env.get_template(template).render(
                     this=template,
                     routes=routes,
+                    accent=page['accent'],
                 ))
             # subprocess.run(['npx', 'js-beautify', '-r', dest])
 
