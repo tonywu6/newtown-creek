@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Theory Making 2: Flowing in, flowing out" %}
+{% set topic = "theory.making_2" %}
+{% set location = ['nyu'] %}
+
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="styles/style-theory-making-2.css">
@@ -16,14 +20,7 @@
 </header>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Theory-making #2",
-        "color": "green"
-    }
-</script>
-{% endset %}
+
 
 {% block article %}
 

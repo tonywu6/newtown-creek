@@ -1,15 +1,11 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Video Project: Navigating the Pandemic" %}
+{% set short_title = "Video Project" %}
+{% set topic = "video.final" %}
+
 {% block article %}
 <video controls>
     <source src="static/video/video-project/video-final-480p.mp4" type="video/mp4"></video>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Video Project: Final",
-        "color": "red"
-    }
-</script>
-{% endset %}

@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Ecology Ideas" %}
+{% set topic = "misc.ideas" %}
+{% set location = ["nyu"] %}
+
 {% block article %}
 
 <p><strong>Transit Inaccessibility in Canarsie, Brooklyn</strong></p>
@@ -23,12 +27,3 @@
 </ul>
 
 {% endblock %}
-
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Ecology Ideas",
-        "color": "white"
-    }
-</script>
-{% endset %}

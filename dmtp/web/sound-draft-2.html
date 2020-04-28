@@ -1,15 +1,11 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Sound Project: Draft 2" %}
+{% set short_title = "Draft 2" %}
+{% set topic = "sound.draft_2" %}
+
 {% block article %}
 <audio controls>
     <source src="static/audio/sound-project/sound-project-draft-2.m4a" type="audio/mp4"></audio>
 {% endblock %}
 
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Sound Project: 2nd Draft",
-        "color": "magenta"
-    }
-</script>
-{% endset %}

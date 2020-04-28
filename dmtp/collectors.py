@@ -23,6 +23,8 @@ import requests
 
 from jinja2 import Environment, Template
 
+from . import metadata
+
 
 class Hyperlink:
     def __init__(self, url, tag=None):
@@ -60,7 +62,7 @@ def parse_script_tag(soup: bs4.BeautifulSoup):
     return dict()
 
 
-def parse_refs(soup: bs4.BeautifulSoup):
+def collect_refs(soup: bs4.BeautifulSoup):
     tags = soup.find_all(Hyperlink.tag_has_link)
     return [Hyperlink(a.get('href', a.get('src')), a) for a in tags]
 
@@ -69,11 +71,16 @@ def get_metadata(env: Environment, template: Template, context: dict = None) -> 
     context = context or dict()
     module = template.make_module(context)
     soup = bs4.BeautifulSoup(str(module), 'html.parser')
-    metadata_soup = bs4.BeautifulSoup(getattr(module, 'metadata', '<script></script>'), 'html.parser')
 
-    metadata = parse_script_tag(metadata_soup)
-    metadata['refs'] = parse_refs(soup)
-    return metadata
+    md = {
+        'title': module.title,
+        'short_title': getattr(module, 'short_title', module.title),
+        'topic': module.topic,
+        'location': getattr(module, 'location', list()),
+        'accent': metadata.LINES[metadata.PAGES[module.topic][1]],
+    }
+    md['refs'] = collect_refs(soup)
+    return md
 
 
 def collect_metadata(env: Environment, tmpls: list, base_md: dict = None, context: dict = None) -> dict:
@@ -90,5 +97,4 @@ def collect_metadata(env: Environment, tmpls: list, base_md: dict = None, contex
 
 def collect_routes(metadata: dict) -> list:
     routes = [dict(url=k, **v) for k, v in metadata['pages'].items()]
-    routes = sorted(routes, key=lambda r: r['name'])
     return routes

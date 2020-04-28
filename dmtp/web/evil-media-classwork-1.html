@@ -1,5 +1,9 @@
 {% extends 'templates/article.html' %}
 
+{% set title = "Evil Media: Concepts" %}
+{% set short_title = "In-class 1" %}
+{% set topic = "reading.in_class_1" %}
+
 {% block article %}
 
 <p><strong>Systemic Ambiguity</strong></p>
@@ -21,12 +25,3 @@
 <p>What is abstraction? “[T]he theory of abstract-state machines is … a ‘wide spectrum method’ to “bridge the gap between the two ends of system development: the human understanding and formulation of real-world problems; [and] the deployment of their algorithmic solutions by code-executing machines on changing platforms” (Fuller and Goffey 2012). Abstraction is a practice/technique in programming/algorithm design, in which a complex problem is broken down (abstracted) into smaller, simpler problems; but it is also pervasive in our everyday life: almost all problem solving requires some form of abstraction. It is a way of imagination — imagining people as “end users,” companies as “legal persons,” a complex interpersonal network on Facebook as a set of dots and lines (a graph), sorting a list of 10000 items as sorting 5,000 lists of 2 items, and for the sake of fighting COVID-19, we are now picking up selected info about people such as their travel history so as to quickly identify high-risk areas in cities. The tool of abstraction is immensely powerful, as it simplifies problems greatly. Yet we must also be careful when applying it: when our abstraction distorts and departs from the complex reality, things will go wrong.</p>
 
 {% endblock %}
-
-{% set metadata %}
-<script type="application/json">
-    {
-        "name": "Evil Media: In-class #1",
-        "color": "red"
-    }
-</script>
-{% endset %}
