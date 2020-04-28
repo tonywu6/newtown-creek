@@ -5,5 +5,5 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": ".venv/bin/python"
+    "python.pythonPath": "/usr/local/var/pyenv/versions/mcc1031/bin/python"
 }
