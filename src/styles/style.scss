@@ -97,6 +97,10 @@ a:hover {
         columns: 360px auto;
         padding: 0 0 50px 0;
 
+        div {
+            break-inside: avoid;
+        }
+
         .signage {
             display: block;
             width: auto;
