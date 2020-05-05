@@ -1,12 +1,19 @@
 {% extends 'templates/base.html' %}
 
-{% set title = "Photos: Gallery" %}
-{% set title_short = "Gallery" %}
+{% set title = "Photos Gallery" %}
 {% set topic = "photo.gallery" %}
 {% set bullet = "7" %}
 
 {% set primary_page = 3 %}
 {% set section_name = "Photographs" %}
+{% set section_accent = "cyan" %}
+{% set section_description %}
+<span>Photos gathered in various Newtown Creek localities from January to March 2020. 
+    They are direct, visual documentation of the Creek, 
+    including signs of pollution, industrial development and environmental efforts.
+    The result is a curated gallery of 20 photos, as well as an indexed photo library that is searchable and filterable (in development).
+</span>
+{% endset %}
 
 {% block scripts %}
 {{ super() }}
