@@ -85,7 +85,6 @@ class Webpage:
         url_hash = data.COMMONS_BULLET_URL_HASH[self.bullet]
         return {
             'bullet': self.bullet,
-            'bullet_url': f'https://upload.wikimedia.org/wikipedia/commons/{url_hash[0]}/{url_hash}/NYCS-bull-trans-{self.bullet}-Std.svg',
             'url': self.url,
             'title': self.title,
             'title_short': self.title_short
@@ -124,6 +123,10 @@ class WebpageBundle:
                 'bullets': list()
             })
 
+            if 'section_accent' in page.context_locals:
+                section['accent'] = page.context_locals['section_accent']
+            if 'section_description' in page.context_locals:
+                section['description'] = page.context_locals['section_description']
             if 'section_name' in page.context_locals:
                 section['name'] = page.context_locals['section_name']
             if page.primary_page:
@@ -171,7 +174,8 @@ class WebpageBundle:
                 f.write(
                     page.template.render(
                         routes=routes,
-                        section=routes_mapping[page.section]
+                        section=routes_mapping[page.section],
+                        mapping=routes_mapping
                     ))
                 if TOOL_AVAILABLE['npx']:
                     logging.getLogger('npx.js-beautify').info(subprocess.run(['npx', 'js-beautify', '-r', dest], stdout=subprocess.PIPE).stdout.decode('utf8')[:-1])

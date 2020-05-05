@@ -15,10 +15,27 @@ $onedark-magenta: #c774df;
 $onedark-red: #e26a72;
 $onedark-yellow: #d29a61;
 
+$onedark-black-85: #272c33d8;
+$onedark-gray-85: #727680d8;
+$onedark-white-85: #aaaaaad8;
+$onedark-blue-85: #3c709bd8;
+$onedark-cyan-85: #3d8a94d8;
+$onedark-green-85: #668550d8;
+$onedark-magenta-85: #8b529bd8;
+$onedark-red-85: #91454ad8;
+$onedark-yellow-85: #805d3bd8;
+
+$onedark-gray-darkest: #2a2b2e;
+$onedark-blue-darkest: #213846;
+$onedark-cyan-darkest: #153135;
+$onedark-green-darkest: #1d2b14;
+$onedark-magenta-darkest: #351a3d;
+$onedark-red-darkest: #311718;
+$onedark-yellow-darkest: #352413;
+
 $onedark-blue-darker: #3c8dc1;
-$onedark-blue-darkest-95: #334b5ae8;
-$onedark-blue-darkest: #3e6881;
 $onedark-gray-darker: #787d86;
+$onedark-blue-darkest-85: #334b5ad8;
 $onedark-white-lighter: #ececec;
 
 $std-yellow: #eedd00;
@@ -26,15 +43,27 @@ $std-yellow: #eedd00;
 $ulysses-highlight-fg: rgb(235, 210, 72);
 $ulysses-highlight-bg: rgb(104, 93, 46);
 $ulysses-blue: rgb(70, 172, 219);
-$ulysses-pink: rgb(214, 76, 154);
+$ulysses-pink: rgb(221, 84, 162);
 
 
 .color-darker-bg {
     background-color: $darker;
 }
 
+.color-100-black-bg {
+    background-color: black;
+}
+
 .color-100-white-bg {
     background-color: white;
+}
+
+.color-black-bg {
+    background-color: $onedark-black;
+}
+
+.color-gray-bg {
+    background-color: $onedark-gray;
 }
 
 .color-white-bg {
@@ -73,6 +102,10 @@ $ulysses-pink: rgb(214, 76, 154);
     color: white;
 }
 
+.color-black-fg {
+    color: $onedark-black;
+}
+
 .color-white-fg {
     color: $onedark-white;
 }
@@ -101,11 +134,175 @@ $ulysses-pink: rgb(214, 76, 154);
     color: $onedark-yellow;
 }
 
-.color-95-translucent {
-    background-color: $onedark-blue-darkest-95;
+.color-black-bg-85 {
+    background-color: $onedark-black-85;
+}
+
+.color-white-bg-85 {
+    background-color: $onedark-white-85;
+}
+
+.color-cyan-bg-85 {
+    background-color: $onedark-cyan-85;
+}
+
+.color-blue-bg-85 {
+    background-color: $onedark-blue-85;
+}
+
+.color-magenta-bg-85 {
+    background-color: $onedark-magenta-85;
+}
+
+.color-red-bg-85 {
+    background-color: $onedark-red-85;
+}
+
+.color-green-bg-85 {
+    background-color: $onedark-green-85;
+}
+
+.color-yellow-bg-85 {
+    background-color: $onedark-yellow-85;
+}
+
+.color-cyan-darkest-bg {
+    background-color: $onedark-cyan-darkest;
+}
+
+.color-blue-darkest-bg {
+    background-color: $onedark-blue-darkest;
+}
+
+.color-magenta-darkest-bg {
+    background-color: $onedark-magenta-darkest;
+}
+
+.color-red-darkest-bg {
+    background-color: $onedark-red-darkest;
+}
+
+.color-green-darkest-bg {
+    background-color: $onedark-green-darkest;
+}
+
+.color-yellow-darkest-bg {
+    background-color: $onedark-yellow-darkest;
+}
+
+
+.color-85-translucent {
+    background-color: $onedark-blue-darkest-85;
 }
 
 .rotate-45 {
     transform: rotate(45deg);
     transition: ease-out;
+}
+
+.subway-bullet {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    &.subway-bullet-1 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/e/eb/NYCS-bull-trans-1-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-2 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/5/55/NYCS-bull-trans-2-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-3 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/d/d2/NYCS-bull-trans-3-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-4 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/NYCS-bull-trans-4-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-5 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/b/bf/NYCS-bull-trans-5-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-6 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/NYCS-bull-trans-6-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-6d {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/b/bd/NYCS-bull-trans-6d-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-7 {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/3/3c/NYCS-bull-trans-7-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-7d {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-7d-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-A {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/9/98/NYCS-bull-trans-A-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-B {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/b/b2/NYCS-bull-trans-B-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-C {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/a/aa/NYCS-bull-trans-C-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-D {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/6/62/NYCS-bull-trans-D-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-E {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/d/df/NYCS-bull-trans-E-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-F {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/8/83/NYCS-bull-trans-F-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-Fd {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/a/ad/NYCS-bull-trans-Fd-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-G {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/e/e6/NYCS-bull-trans-G-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-J {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/f/f9/NYCS-bull-trans-J-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-L {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/1/14/NYCS-bull-trans-L-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-M {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/f/f6/NYCS-bull-trans-M-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-N {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/9/94/NYCS-bull-trans-N-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-Q {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/NYCS-bull-trans-Q-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-R {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/1/15/NYCS-bull-trans-R-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-W {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/4/40/NYCS-bull-trans-W-Std.svg') center/100% no-repeat;
+    }
+
+    &.subway-bullet-Z {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/9/93/NYCS-bull-trans-Z-Std.svg') center/100% no-repeat;
+    }
+
 }

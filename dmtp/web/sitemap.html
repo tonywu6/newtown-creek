@@ -6,9 +6,25 @@
 
 {% set primary_page = 7 %}
 {% set section_name = "Sitemap" %}
+{% set section_accent = "green" %}
+{% set section_description %}
+<span>Indices of this website. Contains links to all available pages, including those that are coursework-only and
+    hidden. Also provides indices of all citations, multimedia resources, and external work referenced throughout the
+    website (in development).</span>
+{% endset %}
 
 {% block article %}
 
 <h3>All pages</h3>
+
+{% if mapping %}
+<ul class="signage">
+    {% for section, section_data in mapping.items() %}
+    {% for page in section_data.bullets %}
+    <li class="signage-label color-{{ section_data.accent }}-bg"><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}
 
 {% endblock %}

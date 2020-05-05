@@ -1,0 +1,14 @@
+<div class="nyc-subway-sign color-100-black-bg">
+    <img class="sign-white-band" src="static/graphics/white-square.svg" alt="" />
+    <p class="sign-text-main"><a href="{{ section['default'] }}" title="{{ section['name'] }}">{{ section['name'] }}</a></p>
+    <p class="sign-text-auxiliary">{{ section['description'] }}</p>
+    <ul class="sign-bullets">
+        {% for b in section.bullets %}
+        <li class="sign-bullet">
+            <a href="{{ b['url'] }}" title="{{ b['title'] }}"><span class="subway-bullet subway-bullet-{{ b['bullet'] }}"></span></a>
+        </li>
+        {% endfor %}
+        <li class="sign-arrow"><img class="sign-arrow" src="static/graphics/nyc-subway-arrow.svg" alt="" />
+        </li>
+    </ul>
+</div>

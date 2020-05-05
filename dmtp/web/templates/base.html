@@ -20,8 +20,8 @@
     {% endblock %}
 </head>
 
-<body class="color-subway-{{ accent }}-dark-bg">
-    {% include 'templates/top.html' %}
+<body class="color-{{ section.accent if section is defined else 'blue' }}-darkest-bg">
+    {% include 'templates/top.html' with context %}
 
     {% block body %}
     {% endblock %}

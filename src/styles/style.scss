@@ -79,7 +79,6 @@ a:hover {
         top: 0px;
         position: fixed;
         z-index: 15;
-        background-color: colors.$onedark-blue-darkest-95;
     }
 
     #top-menu-scrollrect {
@@ -98,13 +97,12 @@ a:hover {
         columns: 360px auto;
         padding: 0 0 50px 0;
 
-        .subway-sign {
+        .signage {
             display: block;
             width: auto;
         }
 
-        .mta-sign {
-            background-color: black;
+        .nyc-subway-sign {
             margin: 0 0 1rem 0;
             display: inline-block;
             width: 100%;
@@ -143,12 +141,12 @@ a:hover {
             .sign-text-auxiliary {
                 letter-spacing: -0.02rem;
                 font-weight: 700;
-                color: white;
+                color: colors.$onedark-white;
                 margin: 0rem 10% 0.2rem 0.4rem;
                 line-height: 1.2rem;
             }
 
-            ul.sign-emblems {
+            ul.sign-bullets {
                 display: flex;
                 list-style: none;
                 height: 3rem;
@@ -171,6 +169,58 @@ a:hover {
                         width: 100%;
                         height: 100%;
                         object-fit: contain;
+                    }
+                }
+            }
+
+            &.sign-platform {
+
+                p,
+                li,
+                a {
+                    color: colors.$onedark-black;
+                }
+
+                .sign-text-main {
+                    top: 0;
+                    margin-left: 1rem
+                }
+
+                .sign-text-auxiliary {
+                    font-weight: 300;
+                    font-size: 18pt;
+                    margin: 0.5rem 0.5rem 0.2rem 0.5rem;
+                    text-align: right;
+                }
+
+                .sign-text-first {
+                    margin-top: 1rem;
+                    margin-left: 1rem;
+                    text-align: left;
+                }
+
+                .sign-bullets {
+                    flex-direction: column;
+                    height: max-content;
+
+                    .sign-bullet {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        height: 45px;
+
+                        .subway-bullet {
+                            width: 45px;
+                            height: 45px;
+                            margin: 0 0.5rem;
+                        }
+
+                        .sign-text-auxiliary {
+                            margin: 0;
+                            font-weight: 700;
+                            line-height: 45px;
+                        }
                     }
                 }
             }
@@ -354,6 +404,7 @@ i {
 strong,
 b {
     color: colors.$ulysses-pink;
+    font-weight: 700;
 }
 
 li.cat-item {
@@ -391,7 +442,7 @@ hr {
     width: max-content;
 }
 
-.subway-sign {
+.signage {
     list-style-type: none;
     display: inline-flex;
     flex-direction: column;
@@ -400,7 +451,7 @@ hr {
     width: min-content;
 }
 
-.subway-label {
+.signage-label {
     position: relative;
 
     font-size: 1.5rem;
