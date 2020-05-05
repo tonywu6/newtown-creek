@@ -15,16 +15,6 @@ $onedark-magenta: #c774df;
 $onedark-red: #e26a72;
 $onedark-yellow: #d29a61;
 
-$subway-blue: #0039a6;
-$subway-orange: #ff6319;
-$subway-lime: #6cbe45;
-$subway-brown: #996633;
-$subway-gray: #a7a9ac;
-$subway-yellow: #fccc0a;
-$subway-red: #ee352e;
-$subway-green: #00933c;
-$subway-purple: #b933ad;
-
 $onedark-blue-darker: #3c8dc1;
 $onedark-blue-darkest-95: #334b5ae8;
 $onedark-blue-darkest: #3e6881;
@@ -38,97 +28,40 @@ $ulysses-highlight-bg: rgb(104, 93, 46);
 $ulysses-blue: rgb(70, 172, 219);
 $ulysses-pink: rgb(214, 76, 154);
 
-.color-subway-blue-bg {
-    background-color: #0039a6;
-}
-.color-subway-orange-bg {
-    background-color: #ff6319;
-}
-.color-subway-lime-bg {
-    background-color: #6cbe45;
-}
-.color-subway-brown-bg {
-    background-color: #996633;
-}
-.color-subway-gray-bg {
-    background-color: #a7a9ac;
-}
-.color-subway-yellow-bg {
-    background-color: #fccc0a;
-}
-.color-subway-red-bg {
-    background-color: #ee352e;
-}
-.color-subway-green-bg {
-    background-color: #00933c;
-}
-.color-subway-purple-bg {
-    background-color: #b933ad;
-}
 
-
-.color-subway-blue-dark-bg {
-    background-color: #0f1725;
-}
-.color-subway-orange-dark-bg {
-    background-color: #302926;
-}
-.color-subway-lime-dark-bg {
-    background-color: #242722;
-}
-.color-subway-brown-dark-bg {
-    background-color: $darker;
-}
-.color-subway-gray-dark-bg {
-    background-color: #262627;
-}
-.color-subway-yellow-dark-bg {
-    background-color: #22211a;
-}
-.color-subway-red-dark-bg {
-    background-color: #270e0e;
-}
-.color-subway-green-dark-bg {
-    background-color: #1d2420;
-}
-.color-subway-purple-dark-bg {
-    background-color: #220f20;
-}
-
-
-.color-onedark-darker-bg {
+.color-darker-bg {
     background-color: $darker;
 }
 
-.color-onedark-100-white-bg {
+.color-100-white-bg {
     background-color: white;
 }
 
-.color-onedark-white-bg {
+.color-white-bg {
     background-color: $onedark-white;
 }
 
-.color-onedark-cyan-bg {
+.color-cyan-bg {
     background-color: $onedark-cyan;
 }
 
-.color-onedark-blue-bg {
+.color-blue-bg {
     background-color: $onedark-blue;
 }
 
-.color-onedark-magenta-bg {
+.color-magenta-bg {
     background-color: $onedark-magenta;
 }
 
-.color-onedark-red-bg {
+.color-red-bg {
     background-color: $onedark-red;
 }
 
-.color-onedark-green-bg {
+.color-green-bg {
     background-color: $onedark-green;
 }
 
-.color-onedark-yellow-bg {
+.color-yellow-bg {
     background-color: $onedark-yellow;
 }
 
@@ -174,4 +107,5 @@ $ulysses-pink: rgb(214, 76, 154);
 
 .rotate-45 {
     transform: rotate(45deg);
+    transition: ease-out;
 }

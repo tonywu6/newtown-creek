@@ -2,15 +2,13 @@
 
 {% set title = "Sitemap" %}
 {% set topic = "sitemap.main" %}
+{% set bullet = "G" %}
+
+{% set primary_page = 7 %}
+{% set section_name = "Sitemap" %}
 
 {% block article %}
 
-<ul>
-    {% for route in routes %}
-    <li><a href="{{ route.url }}" class="color-{{ route.color }}-fg">{{ route.name }}</a></li>
-    {% endfor %}
-</ul>
+<h3>All pages</h3>
 
 {% endblock %}
-
-
