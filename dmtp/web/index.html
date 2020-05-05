@@ -1,7 +1,12 @@
 {% extends 'templates/base.html' %}
 
 {% set title = "Home" %}
+{% set title_short = 'Explorer' %}
 {% set topic = "home.explorer" %}
+{% set bullet = "L" %}
+
+{% set primary_page = 1 %}
+{% set section_name = "Homepage" %}
 
 {% block styles %}
 {{ super() }}
@@ -29,3 +34,12 @@
 </main>
 
 {% endblock %}
+
+{% set additional_menu %}
+<div class="highlighter">
+    <div class="top-menu-button hl" onclick="">
+        <a href="javascript:void(0)"><img src="static/graphics/cross.svg"></a>
+    </div>
+    <p class="subway-label color-white-bg hl-switch">Help</p>
+</div>
+{% endset %}

@@ -18,16 +18,25 @@
 
 
 function toggleMenu() {
-    toggleFlex($('#top-menu-content'))
+    toggleHidden($('#top-menu-background'))
+    toggleHidden($('#top-menu-scrollrect'))
+    $('body').toggleClass('noscroll')
     $('#nav-switch img').toggleClass('rotate-45')
 }
-function toggleFlex(e) {
+
+function toggleHidden(e) {
     $(e).toggleClass('hidden')
-    $(e).toggleClass('flex')
-    return !$(e).hasClass('hidden')
+    return !$(e).hasClass('hidden')   
 }
 
+// function toggleFlex(e) {
+//     $(e).toggleClass('flex')
+//     return toggleHidden(e)
+// }
+
 $(document).ready(() => {
-    $('#nav-switch').on('click', toggleMenu)
-    if (window.location.hash == '#top-menu-content') toggleMenu()
+    window.onhashchange = () => {
+        if (window.location.hash == '#top-menu-content') toggleMenu()
+    }
+    window.onhashchange()
 })

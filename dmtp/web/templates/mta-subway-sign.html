@@ -1,0 +1,18 @@
+<div class="mta-sign">
+    <img class="sign-white-band" src="static/graphics/white-square.svg" alt="" />
+    <p class="sign-text-main"><a href="{{ sign_data['default'] }}"
+            title="{{ sign_data['name'] }}">{{ sign_data['name'] }}</a></p>
+    <p class="sign-text-auxiliary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam accusantium
+        iste nesciunt optio tempore consequatur. Nihil repellat quidem veritatis nulla eius, explicabo delectus
+        reprehenderit iure harum sapiente nobis beatae.</p>
+    <ul class="sign-emblems">
+        {% for b in sign_data.bullets %}
+        <li class="sign-bullet">
+            <a href="{{ b['url'] }}" title="{{ b['title'] }}">
+                <img src="{{ b['bullet_url'] }}" alt="">
+            </a></li>
+        {% endfor %}
+        <li class="sign-arrow"><img class="sign-arrow" src="static/graphics/nyc-subway-arrow.svg" alt="" />
+        </li>
+    </ul>
+</div>

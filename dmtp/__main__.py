@@ -20,8 +20,11 @@ import subprocess
 from pathlib import Path
 
 import click
+from ftpsync.targets import FsTarget
+from ftpsync.ftp_target import FtpTarget
+from ftpsync.synchronizers import UploadSynchronizer
 
-from . import assemble
+from . import dmtp
 
 
 @click.group()
@@ -31,19 +34,17 @@ def cli():
 
 @cli.command()
 def build():
-    assemble.build()
-
-
-@cli.command()
-def serve():
-    assemble.build()
-    assemble.serve()
+    dmtp.WebpageBundle().build_site()
 
 
 @cli.command()
 def publish():
-    assemble.build()
-    assemble.publish()
+    dmtp.WebpageBundle().build_site()
+    web = FsTarget('./web')
+    remote = FtpTarget('/', os.getenv('FTP_HOST'), username=os.getenv('FTP_USERNAME'), password=os.getenv('FTP_PASSWORD'))
+    opts = {"force": False, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn'}
+    s = UploadSynchronizer(web, remote, opts)
+    s.run()
 
 
 @cli.command()
