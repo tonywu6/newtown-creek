@@ -42,7 +42,7 @@ def publish():
     dmtp.WebpageBundle().build_site()
     web = FsTarget('./web')
     remote = FtpTarget('/', os.getenv('FTP_HOST'), username=os.getenv('FTP_USERNAME'), password=os.getenv('FTP_PASSWORD'))
-    opts = {"force": False, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn'}
+    opts = {"force": False, "delete_unmatched": True, "verbose": 3, 'exclude': '.DS_Store,.git,.hg,.svn', 'resolve': 'ask'}
     s = UploadSynchronizer(web, remote, opts)
     s.run()
 
