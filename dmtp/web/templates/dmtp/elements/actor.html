@@ -1,0 +1,15 @@
+<div id="{{ id }}" class="actor">
+    <figure>
+        <div class="img-context">
+            <div class="img-container zoomed-in">
+                <div class="img-mask">
+                    {{ img }}
+                </div>
+            </div>
+        </div>
+        {% if caption %}
+        <figcaption>{{ caption }}</figcaption>
+        {% endif %}
+    </figure>
+    <button type="button" aria-hidden="true" class="signage-label btn color-red-bg">Context</button>
+</div>

@@ -1,0 +1,43 @@
+{
+  "name": "tonywu-nyu-dmtp-s20",
+  "version": "0.0.1",
+  "description": "DMTP",
+  "author": "Tony Wu <tony.wu@nyu.edu>",
+  "license": "GPL-3.0-or-later",
+  "private": true,
+  "sideEffects": [
+    "*.scss"
+  ],
+  "prettier": {
+    "overrides": [
+      {
+        "files": "webpack.config.js",
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ],
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "scripts": {
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.0.16",
+    "@types/d3": "^7.0.0",
+    "@types/lunr": "^2.3.3",
+    "bootstrap": "^5.0.2",
+    "css-loader": "^5.2.6",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

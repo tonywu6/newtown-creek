@@ -1,0 +1,79 @@
+@import "../../vendor/bootstrap/5.0.1/scss/functions";
+@import "../../vendor/bootstrap/5.0.1/scss/variables";
+
+$gray-950: #111114;
+$gray-850: #26262c;
+
+$bw-grey-0: #0e0e10;
+$bw-grey-1: #111114;
+$bw-grey-2: #18181b;
+$bw-grey-3: #1f1f23;
+$bw-grey-4: #26262c;
+$bw-grey-5: #323239;
+$bw-grey-6: #3b3b44;
+$bw-grey-7: #53535f;
+$bw-grey-8: #848494;
+$bw-grey-9: #adadb8;
+$bw-grey-10: #c8c8d0;
+$bw-grey-11: #d3d3d9;
+$bw-grey-12: #dedee3;
+$bw-grey-13: #e6e6ea;
+$bw-grey-14: #efeff1;
+$bw-grey-15: #f7f7f8;
+
+$darkest: #1a1e23;
+$darker: #21252c;
+$dark: #272c33;
+$medium-dark: #50595e;
+$medium: #939799;
+$medium-light: #9ca3a7;
+
+$onedark-black: #272c33;
+$onedark-gray: #abb1bf;
+$onedark-white: #d3d3d3;
+$onedark-blue: #5cadf1;
+$onedark-cyan: #51b5c3;
+$onedark-green: #96c475;
+$onedark-magenta: #c774df;
+$onedark-red: #e26a72;
+$onedark-yellow: #d29a61;
+
+$onedark-black-85: #272c33d8;
+$onedark-gray-85: #727680d8;
+$onedark-white-85: #aaaaaad8;
+$onedark-blue-85: #3c709bd8;
+$onedark-cyan-85: #3d8a94d8;
+$onedark-green-85: #668550d8;
+$onedark-magenta-85: #8b529bd8;
+$onedark-red-85: #91454ad8;
+$onedark-yellow-85: #805d3bd8;
+
+$onedark-gray-darkest: #2a2b2e;
+$onedark-blue-darkest: #213846;
+$onedark-cyan-darkest: #153135;
+$onedark-green-darkest: #1d2b14;
+$onedark-magenta-darkest: #351a3d;
+$onedark-red-darkest: #311718;
+$onedark-yellow-darkest: #352413;
+
+$onedark-blue-darker: #3c8dc1;
+$onedark-gray-darker: #787d86;
+$onedark-blue-darkest-85: #334b5ad8;
+$onedark-white-lighter: #ececec;
+
+$std-yellow: #eedd00;
+
+$ulysses-highlight-fg: rgb(235, 210, 72);
+$ulysses-highlight-bg: rgba(104, 93, 46, 0.459);
+$ulysses-blue: rgb(70, 172, 219);
+$ulysses-pink: rgb(221, 84, 162);
+
+$color-bg: $bw-grey-1;
+
+$color-em: $ulysses-blue;
+$color-strong: $ulysses-pink;
+$color-anchor: $onedark-blue-darker;
+
+$color-text-brighter: $bw-grey-13;
+$color-text: $bw-grey-11;
+$color-text-muted: $bw-grey-9;

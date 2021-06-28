@@ -1,0 +1,31 @@
+{% extends 'dmtp/base/base.html' %}
+
+{% block title %}{{ article.name }}{% endblock %}
+
+{% block body %}
+
+<article>
+    <header>
+        {% block header %}
+        <h1>{{ article.name }}</h1>
+        <span class="date-published">
+            <time datetime="{{ article.date_created.isoformat }}">
+                {{ article.date_created }}
+            </time>
+        </span>
+        {% endblock %}
+    </header>
+    <section class="article-content">
+        {% block article %}
+        {% endblock %}
+    </section>
+    <section class="citations">
+        {% block citation %}
+        <header>
+            <h5>Works Cited</h5>
+        </header>
+        {% endblock %}
+    </section>
+</article>
+
+{% endblock %}
