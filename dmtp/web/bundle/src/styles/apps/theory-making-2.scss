@@ -75,11 +75,19 @@ h1.h1-fullsize {
         display: flex;
 
         .img-mask {
+            position: relative;
             overflow: hidden;
 
             margin: auto;
             max-height: calc(100% - 32px);
             border-radius: 16px;
+
+            .anchor {
+                left: 0.6rem;
+                top: 0.4rem;
+                font-size: 1.5rem;
+                height: unset;
+            }
         }
 
         @keyframes fade-out {

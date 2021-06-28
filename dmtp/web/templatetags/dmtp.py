@@ -33,7 +33,7 @@ class ArtifactNode(Node):
     classes: str = ''
 
     def get_instance(self, ctx: Context) -> Multimedia:
-        return Multimedia.objects.get(qualified_name=unwrap(ctx, self.resource))
+        return Multimedia.objects.prefetch_related('location').get(qualified_name=unwrap(ctx, self.resource))
 
     def render(self, ctx: Context):
         id_ = optional_attr('id', unwrap(ctx, self.id))
@@ -42,7 +42,10 @@ class ArtifactNode(Node):
         instance = self.get_instance(ctx)
         template = loader.get_template(f'dmtp/elements/artifact/{instance.type}.html')
         info = {'id': id_, 'classes': classes, 'static': instance.static,
-                'description': instance.alt}
+                'name': instance.name, 'description': instance.alt,
+                'datetime': instance.date_created.isoformat(),
+                'location_id': instance.location.qualified_name,
+                'location': instance.location.name}
         return template.render(info)
 
 
@@ -57,7 +60,7 @@ class FigureNode(Node):
     def render(self, ctx: Context):
         artifact = ArtifactNode(self.resource, self.id, self.classes)
         return loader.get_template('dmtp/elements/figure.html').render(
-            {'img': artifact.render(ctx),
+            {'artifact': artifact.render(ctx),
              'caption': unwrap(ctx, self.caption)},
         )
 
