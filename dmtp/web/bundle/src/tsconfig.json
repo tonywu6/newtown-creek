@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "../build/dmtp",
+        "rootDir": ".",
+        "module": "ES6",
+        "target": "ES6",
+        "lib": ["ES2017", "DOM", "DOM.Iterable"],
+        "moduleResolution": "Node",
+        "allowJs": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "composite": true,
+        "declarationMap": true,
+        "noImplicitAny": true,
+    },
+    "include": ["./**/*.ts", "./**/*.js"],
+}

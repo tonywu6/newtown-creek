@@ -1,0 +1,27 @@
+{% extends 'dmtp/base/base.html' %}
+{% load dmtp static %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<header>
+    <h1 class="shape">Newtown Creek</h1>
+</header>
+<main>
+    <div id="map-container" class="layer">
+        <img id="map" src="{% static 'graphics/newtown-creek-map.svg' %}" alt="map of newtown creek"
+            class="layer-content">
+        <div id="map-lables" class="layer">
+            <img src="{% static 'graphics/newtown-creek-map-labels.svg' %}" alt="map labels" class="layer-content">
+        </div>
+        <div id="annotation" class="layer">
+            <div class="layer highlighter">
+                <ul class="signage">
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
