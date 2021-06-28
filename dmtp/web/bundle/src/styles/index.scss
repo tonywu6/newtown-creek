@@ -35,3 +35,114 @@ article {
 .main-container {
     padding: 4rem 0;
 }
+
+.fixed-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: visible;
+    overflow-y: visible;
+    z-index: 1000;
+}
+
+.artifact-panel {
+    background-color: $bw-grey-1-95;
+
+    padding: 1.5rem;
+    display: grid;
+
+    grid-template-columns: 1fr 320px;
+    gap: 1rem;
+
+    visibility: hidden;
+    &.show {
+        visibility: visible;
+    }
+
+    h6 {
+        color: $color-text-muted;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin: 1rem 0 0 0;
+    }
+
+    .close-button {
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        grid-template-columns: 1fr 256px;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0;
+        overflow-y: scroll;
+
+        h2 {
+            margin: 1rem 0;
+        }
+
+        figure {
+            margin: 1rem 0 0 0;
+        }
+
+        .close-button {
+            position: static;
+            text-align: right;
+            margin: 0 0 6px 0;
+        }
+    }
+
+    figure img {
+        width: 100%;
+    }
+}
+
+.artifact-container {
+    position: relative;
+
+    .anchor {
+        font-size: 2rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1rem;
+            text-align: right;
+            width: 100%;
+            margin: 6px 0 0 0;
+            &::after {
+                content: "info";
+                margin-inline-start: 6px;
+            }
+        }
+    }
+}
+
+.artifact-view {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    > img {
+        width: 100%;
+    }
+}
+
+.artifact-details {
+    padding: 0 1rem;
+    overflow-y: scroll;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        overflow-y: unset;
+    }
+}

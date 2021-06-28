@@ -529,14 +529,17 @@ figure {
     line-height: 1;
     top: 1px;
     left: -1.2em;
+    height: 100%;
 
     color: inherit;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 
     i.bi {
         visibility: hidden;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         color: inherit;
 
         i.bi {
@@ -553,13 +556,12 @@ figure {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    &:hover .anchor i.bi {
-        visibility: visible;
+.anchor-container {
+    &:hover,
+    &:focus {
+        .anchor i.bi {
+            visibility: visible;
+        }
     }
 }
 
@@ -573,4 +575,16 @@ video,
 iframe {
     width: 100%;
     margin: 1rem auto;
+}
+
+blockquote {
+    font-size: 1em;
+    margin: 1rem 0 1rem;
+    padding: 1rem 2rem;
+    color: $ulysses-blue;
+    background-color: $ulysses-blue-15;
+
+    p {
+        margin: 0;
+    }
 }
