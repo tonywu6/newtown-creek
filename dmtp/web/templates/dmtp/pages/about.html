@@ -1,5 +1,11 @@
 {% extends 'dmtp/base/article.html' %}
-{% load dmtp %}
+{% load dmtp static %}
+
+{% block metadata %}
+{{ block.super }}
+<meta property="og:image" content="{% static 'img/maspeth-ave/w4-operatic-9.jpg' %}" />
+<meta name="twitter:image" content="{% static 'img/maspeth-ave/w4-operatic-9.jpg' %}" />
+{% endblock %}
 
 {% block article %}
 

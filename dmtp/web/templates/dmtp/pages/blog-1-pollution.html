@@ -1,5 +1,12 @@
 {% extends 'dmtp/base/article.html' %}
-{% load dmtp %}
+{% load dmtp static %}
+
+{% block metadata %}
+{{ block.super }}
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{% static 'img/greenpoint-ave/w3-4.jpg' %}" />
+<meta name="twitter:image" content="{% static 'img/greenpoint-ave/w3-4.jpg' %}" />
+{% endblock %}
 
 {% block article %}
 

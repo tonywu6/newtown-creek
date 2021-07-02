@@ -91,6 +91,12 @@ class Multimedia(models.Model):
     def alt(self):
         return escape(self.description)
 
+    @property
+    def page(self):
+        if self.type != 'text':
+            raise ValueError(f'No page endpoint for {self}')
+        return self.qualified_name.replace('dmtp/pages/', '').replace('.html', '')
+
     def get_template(self) -> Template:
         if self.type != 'text':
             raise ValueError(f'No template for {self}')

@@ -18,44 +18,44 @@ import { compareAsc as dateCompareAsc } from 'date-fns'
 
 import * as d3 from 'd3'
 import * as _ from 'lodash'
-import { ApolloClient, gql, InMemoryCache, HttpLink, from as linkFrom, ApolloQueryResult } from '@apollo/client/core'
+// import { ApolloClient, gql, InMemoryCache, HttpLink, from as linkFrom, ApolloQueryResult } from '@apollo/client/core'
 import { setContext } from '@apollo/client/link/context'
 
 import { artifactPanel, MediaInfo, timeElem } from './main'
 
-const GET_DATA = gql`
-    query {
-        locations {
-            qualifiedName
-            lat
-            long
-            radius
-            name
-            shortName
-            children {
-                qualifiedName
-                lat
-                long
-                radius
-                name
-                shortName
-            }
-        }
-        multimedia {
-            qualifiedName
-            slug
-            url
-            thumb
-            name
-            type
-            description
-            dateCreated
-            location {
-                qualifiedName
-            }
-        }
-    }
-`
+// const GET_DATA = gql`
+//     query {
+//         locations {
+//             qualifiedName
+//             lat
+//             long
+//             radius
+//             name
+//             shortName
+//             children {
+//                 qualifiedName
+//                 lat
+//                 long
+//                 radius
+//                 name
+//                 shortName
+//             }
+//         }
+//         multimedia {
+//             qualifiedName
+//             slug
+//             url
+//             thumb
+//             name
+//             type
+//             description
+//             dateCreated
+//             location {
+//                 qualifiedName
+//             }
+//         }
+//     }
+// `
 
 function getCSRF(elem: HTMLElement) {
     let csrf = elem.querySelector<HTMLInputElement>('input[type="hidden"][name="csrfmiddlewaretoken"]')
@@ -69,10 +69,10 @@ const setCSRFToken = setContext((request, previousContext) => ({
     headers: { 'X-CSRFToken': getCSRF(document.documentElement) },
 }))
 
-const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    link: linkFrom([setCSRFToken, new HttpLink({ uri: '/graphql' })]),
-})
+// const client = new ApolloClient({
+//     cache: new InMemoryCache(),
+//     link: linkFrom([setCSRFToken, new HttpLink({ uri: '/graphql' })]),
+// })
 
 const locations: Record<string, Location> = {}
 const multimedia: Record<string, Multimedia> = {}
@@ -266,7 +266,8 @@ class Multimedia implements MediaInfo {
 }
 
 async function initData() {
-    let data: ApolloQueryResult<Query> = await client.query({ query: GET_DATA })
+    // let data: ApolloQueryResult<Query> = await client.query({ query: GET_DATA })
+    let data: { data: Query } = await (await fetch('/static/gql.json')).json()
     for (let d of data.data.locations) {
         let loc = new Location(d)
         locations[loc.id] = loc

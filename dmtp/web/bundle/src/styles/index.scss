@@ -119,6 +119,10 @@ article {
         object-fit: contain;
         max-height: 100%;
     }
+
+    video {
+        max-height: 100%;
+    }
 }
 
 .artifact-container {
