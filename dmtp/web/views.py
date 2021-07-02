@@ -14,7 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from django.http import Http404, HttpRequest, HttpResponse
+from django.conf import settings
+from django.http import FileResponse, Http404, HttpRequest, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.safestring import mark_safe
 
@@ -37,3 +38,11 @@ def articles(req: HttpRequest, page: str) -> HttpResponse:
     if article.type != 'text':
         raise Http404()
     return render(req, article.qualified_name, context={'article': article})
+
+
+def http404(req: HttpRequest, *args, **kwargs):
+    return render(req, '404.html')
+
+
+def gql(req):
+    return FileResponse(open(settings.STATIC_SRC_DIR / 'gql.json', 'rb'))

@@ -1,6 +1,13 @@
 {% extends 'dmtp/base/article.html' %}
 {% load dmtp static %}
 
+{% block metadata %}
+{{ block.super }}
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{% static 'img/meeker-ave/w6-hungry-24.jpg' %}" />
+<meta name="twitter:image" content="{% static 'img/meeker-ave/w6-hungry-24.jpg' %}" />
+{% endblock %}
+
 {% block header %}
 <h1 class="h1-fullsize">Hungry?</h1>
 {{ block.super }}

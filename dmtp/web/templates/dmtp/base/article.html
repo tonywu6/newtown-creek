@@ -2,6 +2,19 @@
 
 {% block title %}{{ article.name }}{% endblock %}
 
+{% block metadata %}
+<meta name="theme-color" content="#dd54a2">
+<meta property="og:title" content="{{ article.name }}" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ article.description }}" />
+<meta property="article:published_time" content="{{ article.date_created.isoformat }}" />
+<meta property="article:author" content="{{ article.author|default:'Tony Wu' }}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@tonyzbf" />
+<meta name="twitter:title" content="{{ article.name }}" />
+<meta name="twitter:description" content="{{ article.description }}" />
+{% endblock %}
+
 {% block body %}
 
 <article>
