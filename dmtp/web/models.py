@@ -25,12 +25,13 @@ from django.db.models.query import QuerySet
 from django.template import Template, loader
 from django.templatetags.static import static
 from django.utils.html import escape
+from django.utils.text import slugify
 
 
 class MediaType(models.TextChoices):
     TEXT = 'text', 'Writing'
     IMAGE = 'image', 'Photo'
-    AUDIO = 'audio', 'Audio'
+    AUDIO = 'audio', 'Sound'
     VIDEO = 'video', 'Video'
 
 
@@ -40,10 +41,21 @@ class Location(models.Model):
     lat: float = models.FloatField()
     long: float = models.FloatField()
 
-    name: str = models.TextField(max_length=512)
+    name: str = models.TextField()
+    short_name: str = models.TextField()
+
+    parent: Location = models.ForeignKey('Location', on_delete=models.SET_NULL, null=True, blank=True, related_name='children')
+    radius: float = models.FloatField(default=0)
 
     def __str__(self) -> str:
         return self.qualified_name
+
+    @property
+    def is_point(self) -> bool:
+        return self.radius == 0
+
+    def to_json(self):
+        pass
 
 
 class Multimedia(models.Model):
@@ -54,10 +66,14 @@ class Multimedia(models.Model):
     description: str = models.TextField(blank=True)
 
     date_created: datetime = models.DateTimeField(verbose_name='date created')
-    location: Location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True, blank=True)
+    location: Location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True, blank=True, related_name='media')
     hidden: bool = models.BooleanField(default=False)
 
     related: QuerySet[Multimedia] = models.ManyToManyField('self', blank=True)
+
+    @property
+    def slug(self) -> str:
+        return slugify(f'{self.name} {Path(self.qualified_name).with_suffix("").name}')
 
     @property
     def path(self) -> Path:
@@ -66,6 +82,10 @@ class Multimedia(models.Model):
     @property
     def static(self) -> str:
         return static(self.qualified_name)
+
+    @property
+    def thumbnail(self) -> str:
+        return static(f'thumbnails/{Path(self.qualified_name).with_suffix(".jpg")}')
 
     @property
     def alt(self):

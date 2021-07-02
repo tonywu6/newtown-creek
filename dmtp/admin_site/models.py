@@ -169,7 +169,7 @@ class AdminController(SearchMixin, ModelAdmin):
             fields.CharField, fields.TextField,
             fields.IntegerField, fields.DateField,
             fields.DateTimeField, fields.URLField,
-            fields.BooleanField,
+            fields.BooleanField, fields.FloatField,
         )
         for f in self.model._meta.get_fields():
             if f.editable and not f.auto_created and type(f) in target_fields:

@@ -3,25 +3,45 @@
 
 {% block title %}Home{% endblock %}
 
+{% block masthead %}
+{% endblock %}
+
 {% block body %}
 
-<header>
-    <h1 class="shape">Newtown Creek</h1>
-</header>
-<main>
-    <div id="map-container" class="layer">
-        <img id="map" src="{% static 'graphics/newtown-creek-map.svg' %}" alt="map of newtown creek"
-            class="layer-content">
-        <div id="map-lables" class="layer">
-            <img src="{% static 'graphics/newtown-creek-map-labels.svg' %}" alt="map labels" class="layer-content">
-        </div>
-        <div id="annotation" class="layer">
-            <div class="layer highlighter">
-                <ul class="signage">
-                </ul>
+<main id="index-main" aria-label="Newtown Creek Explorer">
+    {% csrf_token %}
+    <section id="map-container" class="layer">
+        {% include 'dmtp/index.svg' %}
+        <div role="article" id="overlay" aria-live="polite">
+            <header>
+                <h6 class="no-landmark" role="navigation">
+                    <a class="map-location-back" aria-describedby="map-location-title">
+                        <i class="bi bi-arrow-left-square-fill"></i>
+                        <span class="map-location-subtitle"></span>
+                    </a>
+                </h6>
+                <h2 id="map-location-title" class="map-location-title no-landmark"></h2>
+            </header>
+            <div role="list" class="accordion accordion-flush map-artifacts" id="map-artifact-list"
+                aria-describedby="map-location-title">
+                {% for icon, type in media_type %}
+                <section role="listitem" class="accordion-item" id="artifacts-{{ type }}">
+                    <h2 class="accordion-header no-landmark" id="artifacts-{{ type }}-h2"
+                        aria-describedby="map-location-title">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#artifacts-{{ type }}-content" aria-expanded="false"
+                            aria-controls="artifacts-{{ type }}"><span>{{ icon }}</span>
+                            <span class="accordion-button-label"></span></button>
+                    </h2>
+                    <div role="region" id="artifacts-{{ type }}-content" class="accordion-collapse collapse"
+                        aria-labelledby="artifacts-{{ type }}-h2" data-bs-parent="#map-artifact-list">
+                        <ul class="accordion-body"></ul>
+                    </div>
+                </section>
+                {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 </main>
 
 {% endblock %}

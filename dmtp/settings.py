@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dmtp.web.apps.WebConfig',
     'django_extensions',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -108,3 +109,7 @@ LOGGING_CONFIG = None
 
 BRANDING_FULL = 'DMTP'
 BRANDING_SHORT = 'DMTP'
+
+GRAPHENE = {
+    'SCHEMA': 'dmtp.schema.schema',
+}

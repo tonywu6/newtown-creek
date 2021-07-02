@@ -31,9 +31,9 @@ export function timeElem(datetime: Date, fmt: string) {
     return time
 }
 
-export var artifactPanel: ArtifactPanel
+export let artifactPanel: ArtifactPanel
 
-interface Location {
+export interface MapPoint {
     id: string
     name?: string
     lat?: number
@@ -48,8 +48,14 @@ class ArtifactPanel {
     location: HTMLElement
     description: HTMLElement
 
-    closeButton: HTMLElement
+    closeButton: HTMLAnchorElement
     returnFocus?: HTMLElement
+
+    prevButton: HTMLAnchorElement
+    nextButton: HTMLAnchorElement
+
+    media: MediaInfo[] = []
+    pos: number = 0
 
     constructor(panel: HTMLElement) {
         this.elem = panel
@@ -59,9 +65,19 @@ class ArtifactPanel {
         this.location = panel.querySelector('.artifact-location')!
         this.description = panel.querySelector('.artifact-description')!
         this.closeButton = this.elem.querySelector('.close-button')!
+        this.prevButton = this.elem.querySelector('.nav-prev')!
+        this.prevButton.addEventListener('click', this.prev.bind(this))
+        this.nextButton = this.elem.querySelector('.nav-next')!
+        this.nextButton.addEventListener('click', this.next.bind(this))
+        this.elem.addEventListener('click', (ev) => {
+            let tagName = (ev.target as HTMLElement).tagName
+            if (tagName === 'SECTION' || tagName === 'DIV') {
+                this.closeButton.dispatchEvent(new Event('click'))
+            }
+        })
         this.closeButton.addEventListener('click', (ev) => {
             ev.preventDefault()
-            ev.stopPropagation()
+            killAllChildren(this.view)
             this.elem.classList.remove('show')
         })
         this.closeButton.addEventListener('focusout', () => {
@@ -72,7 +88,22 @@ class ArtifactPanel {
         })
     }
 
-    public setDisplay(artifact: Artifact) {
+    public next(ev?: Event) {
+        ev?.preventDefault()
+        let idx = this.pos + 1
+        if (idx >= this.media.length) return
+        return this.setDisplay(idx)
+    }
+
+    public prev(ev?: Event) {
+        ev?.preventDefault()
+        let idx = this.pos - 1
+        if (idx < 0) return
+        return this.setDisplay(idx)
+    }
+
+    public setDisplay(idx: number) {
+        let artifact = this.media[idx]
         killAllChildren(this.view)
         killAllChildren(this.date)
         killAllChildren(this.location)
@@ -81,6 +112,18 @@ class ArtifactPanel {
         this.date.appendChild(artifact.createTimeElem())
         this.location.appendChild(artifact.createLocationElem())
         this.description.innerHTML = artifact.desc
+        this.pos = idx
+        let noPrev = this.pos == 0
+        let noNext = this.pos == this.media.length - 1
+        this.prevButton.classList.toggle('disabled', noPrev)
+        this.prevButton.setAttribute('aria-disabled', noPrev.toString())
+        this.nextButton.classList.toggle('disabled', noNext)
+        this.nextButton.setAttribute('aria-disabled', noNext.toString())
+    }
+
+    public populate(media: MediaInfo[]) {
+        this.media = [...media]
+        this.pos = 0
     }
 
     public get visible(): boolean {
@@ -90,22 +133,38 @@ class ArtifactPanel {
     public set visible(value: boolean) {
         if (value) {
             this.elem.classList.add('show')
-            this.closeButton.focus()
+            setTimeout(() => this.closeButton.focus(), 100)
         } else {
             this.elem.classList.remove('show')
         }
     }
 }
 
-export class Artifact {
+export interface Info {
+    id: string
+    name: string
+}
+
+export interface MediaInfo extends Info {
+    element: HTMLElement
+    desc: string
+    date: Date
+
+    createTimeElem: () => HTMLElement
+    createLocationElem: () => HTMLElement
+}
+
+export class Artifact implements MediaInfo {
     element: HTMLElement
 
+    id: string
     name: string
     desc: string
     date: Date
-    location: Location
+    location: MapPoint
 
     constructor(artifact: HTMLElement) {
+        this.id = artifact.dataset.qualname!
         this.element = artifact
         this.name = artifact.title!
         this.desc = (artifact as HTMLImageElement).alt || artifact.getAttribute('aria-label') || ''
@@ -124,34 +183,9 @@ export class Artifact {
     createLocationElem() {
         let anchor = document.createElement('a')
         anchor.innerText = this.location.name || this.location.id
+        anchor.href = `/#${this.location.id}`
         return anchor
     }
-
-    createInfoPanelListener(target: ArtifactPanel): (ev: MouseEvent) => void {
-        return (ev) => {
-            let button = ev.target as HTMLElement
-            ev.preventDefault()
-            ev.stopPropagation()
-            target.setDisplay(this)
-            target.visible = true
-            target.returnFocus = button
-            button.setAttribute('aria-expanded', 'true')
-        }
-    }
-}
-
-export function initArtifactViewListener(elem: HTMLElement) {
-    let artifact = new Artifact(elem)
-    let infoButton = document.createElement('a')
-    infoButton.classList.add('anchor')
-    infoButton.setAttribute('aria-label', 'More info')
-    infoButton.setAttribute('role', 'button')
-    infoButton.setAttribute('aria-expanded', 'false')
-    infoButton.href = '#'
-    infoButton.innerHTML = '<i class="bi bi-info-circle-fill"></i>'
-    infoButton.addEventListener('click', artifact.createInfoPanelListener(artifactPanel))
-    elem.parentElement!.appendChild(infoButton)
-    elem.parentElement!.classList.add('anchor-container')
 }
 
 function initArtifactPanel() {
@@ -160,17 +194,39 @@ function initArtifactPanel() {
 
 function initArtifacts() {
     let figures = [...document.querySelectorAll('.artifact')] as HTMLElement[]
-    for (let figure of figures) {
-        initArtifactViewListener(figure)
+    let artifacts: Artifact[] = []
+    for (let i = 0; i < figures.length; i++) {
+        let elem = figures[i]
+        let artifact = new Artifact(elem)
+        let infoButton = document.createElement('a')
+        infoButton.classList.add('anchor')
+        infoButton.setAttribute('aria-label', 'More info')
+        infoButton.setAttribute('role', 'button')
+        infoButton.setAttribute('aria-expanded', 'false')
+        infoButton.href = '#'
+        infoButton.innerHTML = '<i class="bi bi-info-circle-fill"></i>'
+        infoButton.addEventListener('click', (ev) => {
+            let button = ev.target as HTMLElement
+            ev.preventDefault()
+            artifactPanel.setDisplay(i)
+            artifactPanel.visible = true
+            artifactPanel.returnFocus = button
+            button.setAttribute('aria-expanded', 'true')
+        })
+        elem.parentElement!.appendChild(infoButton)
+        elem.parentElement!.classList.add('anchor-container')
+        artifacts.push(artifact)
     }
+    artifactPanel.populate(artifacts)
 }
 
 function createLandmarks() {
     let headings = [...document.querySelectorAll('h1, h2, h3, h4, h5, .landmark')] as HTMLElement[]
     for (let heading of headings) {
+        if (heading.classList.contains('no-landmark')) continue
         let text = heading.textContent
         if (text) {
-            let id = (heading.id = slugify(text).replace(' ', '-'))
+            let id = (heading.id = slugify(text).replace(/ /g, '-'))
             let anchor = document.createElement('a')
             anchor.id = `anchor-${id}`
             anchor.href = `#${id}`
