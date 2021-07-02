@@ -15,6 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import * as main from './scripts/main'
+import * as map from './scripts/map'
 import * as tm2 from './scripts/apps/theory-making-2'
 
 import './styles/index.scss'
@@ -22,5 +23,6 @@ import './styles/apps/theory-making-2.scss'
 
 window.addEventListener('DOMContentLoaded', async () => {
     main.init()
+    map.init()
     tm2.init()
 })

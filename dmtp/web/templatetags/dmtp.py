@@ -43,6 +43,7 @@ class ArtifactNode(Node):
         template = loader.get_template(f'dmtp/elements/artifact/{instance.type}.html')
         info = {'id': id_, 'classes': classes, 'static': instance.static,
                 'name': instance.name, 'description': instance.alt,
+                'qualname': instance.qualified_name,
                 'datetime': instance.date_created.isoformat(),
                 'location_id': instance.location.qualified_name,
                 'location': instance.location.name}

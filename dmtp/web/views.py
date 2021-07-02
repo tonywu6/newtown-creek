@@ -16,12 +16,20 @@
 
 from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import get_object_or_404, render
+from django.utils.safestring import mark_safe
 
-from .models import Multimedia
+from .models import MediaType, Multimedia
+
+ICONS = [
+    mark_safe('<i class="bi bi-newspaper"></i>'),
+    mark_safe('<i class="bi bi-image"></i>'),
+    mark_safe('<i class="bi bi-volume-up-fill"></i>'),
+    mark_safe('<i class="bi bi-film"></i>'),
+]
 
 
 def index(req: HttpRequest) -> HttpResponse:
-    return render(req, 'dmtp/index.html')
+    return render(req, 'dmtp/index.html', {'media_type': zip(ICONS, MediaType.values)})
 
 
 def articles(req: HttpRequest, page: str) -> HttpResponse:

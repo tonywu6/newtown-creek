@@ -252,6 +252,11 @@ select.custom-select {
     box-shadow: var(--box-shadow-1);
 }
 
+.nav-container {
+    height: 2.8rem;
+    overflow: hidden;
+}
+
 .btn,
 .interactive-text {
     font-size: 1rem;
@@ -587,4 +592,118 @@ blockquote {
     p {
         margin: 0;
     }
+}
+
+#map {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+
+    &.in-transit {
+        opacity: 0;
+    }
+
+    &.zoom {
+        .major-locations {
+            display: none;
+        }
+        .minor-locations {
+            visibility: visible;
+        }
+    }
+
+    .major-locations {
+        animation: 0.5s ease-out normal 0s forwards 1 fade-in;
+    }
+
+    .minor-locations {
+        visibility: hidden;
+        transition: opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &.focused {
+            circle.location {
+                cursor: pointer;
+                fill: $std-yellow;
+            }
+        }
+        .out-of-bound {
+            visibility: visible;
+        }
+    }
+
+    rect.location {
+        fill: $std-yellow;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    circle {
+        &.location {
+            fill: $bw-grey-9;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        &.area {
+            cursor: pointer;
+            fill: $std-yellow-50;
+            stroke: $std-yellow;
+            stroke-width: 2px;
+            opacity: 0.3;
+        }
+    }
+
+    .locality {
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            .location,
+            .area {
+                opacity: 1;
+            }
+        }
+    }
+
+    .label {
+        cursor: pointer;
+
+        text {
+            color: $bw-grey-1;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 3.6rem;
+            }
+        }
+        rect {
+            fill: $std-yellow;
+        }
+    }
+
+    .pin {
+        fill: $pink-500;
+        opacity: 0;
+        transition: opacity ease-in-out 0.5s;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+}
+
+.collapse {
+    &:not(.show) {
+        display: none;
+    }
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: none;
+}
+
+.accordion-button::after {
+    transition: none;
 }

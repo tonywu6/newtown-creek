@@ -34,6 +34,8 @@ module.exports = {
     bootstrap: 'bootstrap',
     d3: 'd3',
     lunr: 'lunr',
+    lodash: '_',
+    date_fns: 'date-fns',
   },
 
   plugins: [],

@@ -61,9 +61,11 @@ $onedark-gray-darker: #787d86;
 $onedark-blue-darkest-85: #334b5ad8;
 $onedark-white-lighter: #ececec;
 
-$std-yellow: #eedd00;
+$std-yellow: rgb(238, 221, 0);
+$std-yellow-50: rgba(238, 221, 0, 0.5);
 
 $ulysses-highlight-fg: rgb(235, 210, 72);
+$ulysses-highlight-fg-50: rgba(235, 210, 72, 0.5);
 $ulysses-highlight-bg: rgba(104, 93, 46, 0.459);
 $ulysses-blue: rgb(70, 172, 219);
 $ulysses-blue-15: rgba(70, 172, 219, 0.15);
@@ -80,3 +82,4 @@ $color-text: $bw-grey-11;
 $color-text-muted: $bw-grey-9;
 
 $bw-grey-1-95: #111114ec;
+$bw-grey-1-60: rgba(17, 17, 20, 0.6);

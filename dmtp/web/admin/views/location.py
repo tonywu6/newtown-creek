@@ -14,6 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+from django.contrib.admin.decorators import display
+from django.db.models import BooleanField, ExpressionWrapper, Q
+
 from ....admin_site.models import AdminController
 from ...models import Location
 from .. import admin_
@@ -23,3 +26,18 @@ from .. import admin_
 class LocationAdmin(AdminController):
     class Meta:
         model = Location
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).annotate(
+            has_parent=ExpressionWrapper(
+                Q(parent__isnull=False), BooleanField(),
+            ),
+        )
+
+    @property
+    def list_display(self):
+        return [*super().list_display, 'has_parent']
+
+    @display(boolean=True)
+    def has_parent(self, instance: Location):
+        return instance.has_parent
