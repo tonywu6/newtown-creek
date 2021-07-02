@@ -457,3 +457,55 @@ article {
         font-weight: 300;
     }
 }
+
+.signage {
+    margin: 1rem 0;
+    padding: 10px;
+
+    p {
+        color: black;
+        font-weight: 400;
+        font-family: $sans-serif-fonts-0;
+        line-height: 1.5;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    strong,
+    em {
+        color: black;
+    }
+}
+
+#license {
+    h3 {
+        margin: 0 0 6pt;
+        color: black;
+        font-family: $sans-serif-fonts-0;
+        font-size: 1.2rem;
+    }
+
+    .cc-label {
+        margin: 0 6px 6px 0;
+        display: inline-block;
+
+        img {
+            height: 36px;
+        }
+    }
+}
+
+#contact {
+    a {
+        color: black;
+    }
+
+    i.bi::before {
+        margin: 0 6px 0 3px;
+        top: -2px;
+    }
+
+    .fab::before {
+        margin: 0 6px 0 3px;
+    }
+}
