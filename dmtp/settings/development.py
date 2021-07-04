@@ -5,3 +5,5 @@ from .common import APP_NAME
 
 DEBUG = True
 config_logging(make_logging_config(APP_NAME, level=10))
+
+ALLOWED_HOSTS = ['localhost', '192.168.1.191']

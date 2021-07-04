@@ -3,24 +3,6 @@
 @import "colors";
 @import "fonts";
 
-@keyframes flash {
-    0% {
-        filter: brightness(100%);
-    }
-
-    50% {
-        filter: brightness(100%);
-    }
-
-    51% {
-        filter: brightness(60%);
-    }
-
-    100% {
-        filter: brightness(60%);
-    }
-}
-
 article {
     margin: auto 25% auto;
 
@@ -221,13 +203,13 @@ article {
         @media screen and (max-width: 768px) {
             height: unset;
 
-            > * {
-                padding: 1rem;
-            }
-
             #overlay {
                 position: static;
                 width: 100%;
+            }
+
+            #map {
+                height: 360px;
             }
         }
     }
@@ -277,6 +259,10 @@ article {
         max-height: 50vh;
         overflow-y: scroll;
         background-color: $bw-grey-1-60;
+
+        @media screen and (max-width: 768px) {
+            max-height: unset;
+        }
     }
 
     .map-location-back {
