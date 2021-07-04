@@ -19,8 +19,6 @@ config_logging(make_logging_config(APP_NAME, level=10))
 secrets_conf = Config(RepositoryIni(BASE_DIR / 'secrets.ini'))
 SECRET_KEY = secrets_conf('SECRET_KEY')
 
-ALLOWED_HOSTS = ['localhost']
-
 INSTALLED_APPS = [
     'dmtp.admin_site',
     'django.contrib.admin.apps.SimpleAdminConfig',
