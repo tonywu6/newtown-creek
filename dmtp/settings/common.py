@@ -20,7 +20,7 @@ secrets_conf = Config(RepositoryIni(BASE_DIR / 'secrets.ini'))
 SECRET_KEY = secrets_conf('SECRET_KEY')
 
 INSTALLED_APPS = [
-    'dmtp.admin_site',
+    # 'dmtp.admin_site',
     'django.contrib.admin.apps.SimpleAdminConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dmtp.web.apps.WebConfig',
     'django_extensions',
-    'graphene_django',
+    # 'graphene_django',
     'storages',
 ]
 
@@ -107,6 +107,6 @@ LOGGING_CONFIG = None
 BRANDING_FULL = 'DMTP'
 BRANDING_SHORT = 'DMTP'
 
-GRAPHENE = {
-    'SCHEMA': 'dmtp.schema.schema',
-}
+# GRAPHENE = {
+#     'SCHEMA': 'dmtp.schema.schema',
+# }

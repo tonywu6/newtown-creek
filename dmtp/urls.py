@@ -1,14 +1,15 @@
-from django.urls import include, path, re_path
-from graphene_django.views import GraphQLView
+from django.urls import include, path
 
-from .admin_site.site import create_admin_site
+# from graphene_django.views import GraphQLView
 
-admin_site = create_admin_site('DMTP', [
-    'dmtp.web.admin',
-])
+# from .admin_site.site import create_admin_site
+
+# admin_site = create_admin_site('DMTP', [
+#     'dmtp.web.admin',
+# ])
 
 urlpatterns = [
-    path('admin/', admin_site.urls),
+    # path('admin/', admin_site.urls),
     path('', include('dmtp.web.urls')),
-    re_path(r'^graphql$', GraphQLView.as_view(graphiql=True)),
+    # re_path(r'^graphql$', GraphQLView.as_view(graphiql=True)),
 ]
